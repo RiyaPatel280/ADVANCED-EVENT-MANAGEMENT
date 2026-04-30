@@ -1,0 +1,104 @@
+/* Official Admin Panel */
+.official-admin-panel {
+  padding: 0 1.5rem;
+  background: #F8F9FA;
+  font-family: 'Roboto', sans-serif;
+  min-height: 100vh;
+  position: relative;
+}
+
+/* Stats Cards */
+.stat-card {
+  background: #FFFFFF;
+  border: 1px solid #E6D9F2;
+  border-radius: 8px;
+  transition: box-shadow 0.2s ease, transform 0.2s ease;
+  height: 150px;
+  overflow: hidden;
+}
+
+.stat-card:hover {
+  box-shadow: 0 6px 15px rgba(111, 45, 168, 0.15);
+  transform: translateY(-3px);
+}
+
+.user-stat { border-left: 3px solid #6F2DA8; }
+.organizer-stat { border-left: 3px solid #8B5ACF; }
+.event-stat { border-left: 3px solid #4B1C7A; }
+
+.stat-icon {
+  color: #6F2DA8;
+  margin-bottom: 10px;
+}
+
+.stat-title {
+  color: #000000;
+  font-weight: 500;
+  font-size: 1.2rem;
+  margin-bottom: 8px;
+}
+
+.stat-value {
+  color: #6F2DA8;
+  font-size: 1.8rem;
+  font-weight: 700;
+}
+
+/* Chart Section */
+.official-insight {
+  color: #000000;
+  font-size: 1.6rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 15px;
+}
+
+.official-chart-container {
+  background: #FFFFFF;
+  border: 1px solid #E6D9F2;
+  border-radius: 8px;
+  padding: 15px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+}
+
+.official-chart-container::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url('data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"%3E%3Ccircle cx="50" cy="50" r="3" fill="%236F2DA8" opacity="0.1"/%3E%3Ccircle cx="200" cy="150" r="2" fill="%238B5ACF" opacity="0.1"/%3E%3Ccircle cx="400" cy="100" r="4" fill="%234B1C7A" opacity="0.1"/%3E%3Ccircle cx="600" cy="200" r="3" fill="%236F2DA8" opacity="0.1"/%3E%3Ccircle cx="800" cy="50" r="2" fill="%238B5ACF" opacity="0.1"/%3E%3Ccircle cx="1000" cy="150" r="4" fill="%234B1C7A" opacity="0.1"/%3E%3Ccircle cx="1200" cy="100" r="3" fill="%236F2DA8" opacity="0.1"/%3E%3C/svg%3E') repeat;
+  opacity: 0.05;
+  z-index: -1;
+}
+
+.official-tooltip {
+  background: #FFFFFF;
+  border: 1px solid #6F2DA8;
+  border-radius: 4px;
+  padding: 6px;
+  color: #000000;
+  font-size: 13px;
+  box-shadow: 0 3px 8px rgba(111, 45, 168, 0.15);
+}
+
+/* Additional Widgets */
+.card {
+  border-radius: 8px;
+  border: 1px solid #E6D9F2;
+}
+
+.btn-primary {
+  background-color: #6F2DA8;
+  border-color: #6F2DA8;
+}
+
+.btn-primary:hover {
+  background-color: #8B5ACF;
+  border-color: #8B5ACF;
+}

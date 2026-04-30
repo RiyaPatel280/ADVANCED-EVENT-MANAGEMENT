@@ -1,0 +1,78 @@
+/* Footer Container */
+.footer-container {
+    background: linear-gradient(135deg, #0c0c0b, #000000);
+    padding: 2rem 0;
+    font-family: 'Roboto', sans-serif;
+    color: #fff;
+}
+
+.footer-container h4, 
+.footer-container h6, 
+.footer-container p, 
+.footer-container a {
+    color: #fff; /* White text */
+}
+
+/* Logo Styling */
+.logo-image-footer {
+    height: 4rem;
+    width: 4rem;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.footer-description {
+    font-size: 0.9rem;
+}
+
+/* Footer Links */
+.footer-link {
+    font-size: 0.9rem;
+    text-decoration: none;
+    color: #fff;
+    transition: color 0.3s ease;
+}
+
+.footer-link:hover {
+    color: #cd93ff;
+}
+
+/* Social Icons */
+.social-link {
+    font-size: 1.5rem;
+    margin-right: 1rem;
+    color: #fff;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+/* Individual Social Colors */
+.social-link.facebook {
+    color: #1DA1F2;
+}
+
+
+
+.social-link.twitter {
+    color: #fefefe;
+}
+
+
+
+.social-link.instagram {
+    background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+
+}
+
+
+
+/* Footer Bottom */
+.footer-bottom {
+    background-color: rgba(0, 0, 0, 0.05);
+    text-align: center;
+    padding: 1rem 0;
+    font-size: 0.8rem;
+    color: #fff;
+}

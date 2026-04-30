@@ -1,0 +1,139 @@
+/* Background Gradient */
+.bg-gradient {
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+  }
+  
+  /* Card Styling */
+  .admin-card {
+    border-radius: 20px;
+    background: #ffffff;
+    overflow: hidden;
+    transition: transform 0.3s ease;
+  }
+  
+  .admin-card:hover {
+    transform: translateY(-5px);
+  }
+  
+  .admin-header {
+    background: linear-gradient(90deg, #6F2DA8 0%, #9B59B6 100%);
+    border-bottom: 4px solid #ffffff;
+  }
+  
+  /* Creative Card for Images */
+  .creative-card {
+    border-radius: 15px;
+    overflow: hidden;
+    position: relative;
+    transition: all 0.3s ease;
+  }
+  
+  .creative-card:hover {
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+    transform: scale(1.02);
+  }
+  
+  .image-wrapper {
+    position: relative;
+  }
+  
+  .creative-img {
+    height: 220px;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+  }
+  
+.image-overlay {
+    position: absolute;
+    top: 10px;
+    right: 10px; /* Move the delete button to the right corner */
+    background: rgba(0, 0, 0, 0.5);
+    opacity: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    transition: opacity 0.3s ease;
+}
+
+.creative-card:hover .image-overlay {
+    opacity: 1;
+}
+
+.overlay-btn {
+    color: white;
+    background: red;
+    border: none;
+    border-radius: 50%;
+    width: 36px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+}
+
+  
+  /* Floating Action Button */
+
+
+  
+  /* Modal Styling */
+  .bg-gradient-purple {
+    background: linear-gradient(90deg, #6F2DA8 0%, #9B59B6 100%);
+  }
+  
+  .creative-input {
+    border: 2px dashed #6F2DA8;
+    border-radius: 10px;
+    padding: 10px;
+    background: #f8f9fa;
+    transition: border-color 0.3s ease;
+  }
+  
+  .creative-input:focus {
+    border-color: #9B59B6;
+    box-shadow: none;
+  }
+  
+  .creative-btn {
+    background: linear-gradient(90deg, #6F2DA8 0%, #9B59B6 100%);
+    border: none;
+    border-radius: 10px;
+    padding: 12px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+  }
+  
+  .creative-btn:hover:not(:disabled) {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(107, 45, 168, 0.4);
+  }
+  
+  .creative-btn:disabled {
+    background: #d3d3d3;
+    cursor: not-allowed;
+  }
+  
+  .creative-cancel {
+    border-radius: 10px;
+    background: #e9ecef;
+    color: #333;
+  }
+  
+  /* Loading Animation */
+  .creative-loading {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: #6F2DA8;
+    animation: pulse 1.5s infinite;
+  }
+  
+  @keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+    100% { transform: scale(1); }
+  }
+  

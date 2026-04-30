@@ -1,0 +1,131 @@
+/* Modal */
+.login-modal {
+    border-radius: 10px;
+    overflow: hidden;
+  }
+  
+  /* Header */
+  .login-modal-header {
+    background-color: #6F2DA8;
+    color: #fff;
+    border-bottom: none;
+    padding: 16px;
+  }
+  
+  .login-modal-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+  }
+  
+  /* Body */
+  .login-modal-body {
+    padding: 24px;
+    background-color: #f9f9f9;
+  }
+  
+  /* Form */
+  .login-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+  
+  .login-form-group {
+    margin-bottom: 15px;
+  }
+  
+  .login-label {
+    font-weight: bold;
+    color: #333;
+  }
+  
+  /* Input */
+  .login-input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: border-color 0.3s ease;
+  }
+  
+  .login-input:focus {
+    border-color: #6F2DA8;
+    outline: none;
+  }
+  
+  /* Error Message */
+  .login-error {
+    color: #dc3545;
+    font-size: 0.9rem;
+    text-align: center;
+    margin-bottom: 10px;
+  }
+  
+  /* Buttons */
+  .login-btn {
+    background-color: #6F2DA8;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    cursor: pointer;
+    width: 100%;
+    transition: background-color 0.3s ease;
+  }
+  
+  .login-btn:hover {
+    background-color: #572093;
+  }
+  
+  /* Sign Up Link */
+  .login-signup-link {
+    text-align: center;
+    margin-top: 10px;
+    font-size: 0.9rem;
+  }
+  
+  .signup-btn {
+    color: #6F2DA8;
+    font-weight: bold;
+    text-decoration: none;
+    border: none;
+    background: none;
+    padding: 0;
+    cursor: pointer;
+  }
+  
+  .signup-btn:hover {
+    color: #572093;
+    text-decoration: underline;
+  }
+/* Modal Header */
+.custom-modal-header {
+    position: relative;
+    background-color: #6F2DA8; /* Purple header */
+    color: white;
+    border-bottom: none;
+    padding: 15px 20px;
+    border-radius: 10px 10px 0 0;
+    text-align: center;
+  }
+  
+  /* Close Button (X) */
+  .custom-close-btn {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 24px;
+    color: white;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    font-weight: bold;
+    transition: color 0.3s ease;
+  }
+  
+  .custom-close-btn:hover {
+    color: black;
+  }
+    

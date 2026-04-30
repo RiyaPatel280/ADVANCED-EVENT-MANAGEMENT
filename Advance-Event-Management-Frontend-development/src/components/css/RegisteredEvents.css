@@ -1,0 +1,42 @@
+.text-purple-gradient {
+    background: linear-gradient(90deg, #6f42c1, #9b59b6);
+    -webkit-background-clip: text;
+   
+  }
+  
+  .text-purple {
+    color: #6f42c1;
+  }
+  
+  .text-light-purple {
+    color: #9b59b6;
+  }
+  
+  .event-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .event-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2) !important;
+  }
+  
+  .btn-outline-purple {
+    border-color: #6f42c1;
+    color: #6f42c1;
+  }
+  
+  .btn-outline-purple:hover {
+    background-color: #6f42c1;
+    color: white;
+  }
+  
+  .btn-outline-black {
+    border-color: #333;
+    color: #333;
+  }
+  
+  .btn-outline-black:hover {
+    background-color: #333;
+    color: white;
+  }

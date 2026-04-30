@@ -1,0 +1,597 @@
+/* src/css/Allevent.css */
+
+/* DreamEvent Canvas */
+.dreamevent-canvas {
+  padding: 0 3rem;
+  background: #FFFFFF;
+  font-family: 'Roboto', sans-serif;
+  position: relative;
+  overflow: hidden;
+}
+
+.dreamevent-canvas::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url('data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400"%3E%3Crect x="0" y="0" width="400" height="400" fill="%23FFFFFF"/%3E%3Cpath d="M0,50 Q100,20 200,50 T400,50" fill="none" stroke="%23551A8B" stroke-width="2" opacity="0.25"/%3E%3Cpath d="M0,350 Q100,380 200,350 T400,350" fill="none" stroke="%237D4CAF" stroke-width="1.5" opacity="0.2"/%3E%3Cpolyline points="50,100 100,70 150,100 200,70 250,100" fill="none" stroke="%233C1361" stroke-width="1" opacity="0.15"/%3E%3Ccircle cx="80" cy="80" r="12" fill="%23551A8B" opacity="0.1"/%3E%3Ccircle cx="320" cy="320" r="10" fill="%237D4CAF" opacity="0.08"/%3E%3Cpath d="M150,150 Q170,130 190,150 T230,150" fill="none" stroke="%23000000" stroke-width="0.8" opacity="0.05"/%3E%3Cpath d="M250,250 Q270,230 290,250 T330,250" fill="none" stroke="%233C1361" stroke-width="0.6" opacity="0.07"/%3E%3C/svg%3E') repeat;
+  z-index: 0;
+}
+
+/* Royal Purple Palette */
+.bg-purple {
+  background-color: #551A8B !important;
+}
+
+.btn-purple {
+  background: linear-gradient(135deg, #7D4CAF, #551A8B);
+  border: none;
+  color: #FFFFFF;
+  padding: 14px 28px;
+  font-weight: 700;
+  border-radius: 60px;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.4s ease;
+}
+
+.btn-purple:hover {
+  background: linear-gradient(135deg, #551A8B, #3C1361);
+  color: #FFFFFF;
+  box-shadow: 0 0 20px rgba(85, 26, 139, 0.5);
+}
+
+.btn-outline-purple {
+  border: 3px solid #551A8B;
+  color: #551A8B;
+  padding: 12px 26px;
+  font-weight: 600;
+  border-radius: 60px;
+  background: #FFFFFF;
+  transition: all 0.4s ease;
+}
+
+.btn-outline-purple:hover {
+  background: #551A8B;
+  color: #FFFFFF;
+  box-shadow: 0 0 15px rgba(85, 26, 139, 0.4);
+}
+
+/* Mahaul Sabha (Hero Section) */
+.mahaul-sabha {
+  margin-top: 80px;
+  background: linear-gradient(150deg, #551A8B 20%, #000000 100%);
+  border: 4px dashed #FFFFFF;
+  border-radius: 15px;
+  padding: 60px;
+  position: relative;
+  z-index: 1;
+}
+
+.tansen-crown {
+  color: #FFFFFF;
+  font-size: 3.5rem;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  background: linear-gradient(90deg, #FFFFFF, #7D4CAF);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.sangit-whisper {
+  color: #FFFFFF;
+  font-size: 1.4rem;
+  font-style: italic;
+  text-shadow: 0 2px 5px rgba(0, 0, 0, 0.4);
+}
+
+.rang-path {
+  font-size: 1.3rem;
+}
+
+/* Janam Kshetra (Sidebar) */
+.janam-kshetra {
+  background: #FFFFFF;
+  border: 3px double #551A8B; /* Double purple border */
+  border-radius: 20px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2), inset 0 0 10px rgba(85, 26, 139, 0.1);
+  overflow: hidden; /* Ensures image stays within borders */
+}
+
+.janam-image-weave {
+  position: relative;
+  width: 100%;
+  height: 240px; /* Same height as event cards */
+  overflow: hidden; /* Keeps image within bounds */
+  border-bottom: 2px dashed #551A8B; /* Dashed border below image */
+}
+
+.janam-drishti {
+  width: 100%; /* Full width of the card */
+  height: 100%; /* Matches janam-image-weave height */
+  transition: transform 0.4s ease;
+}
+
+.janam-kshetra:hover .janam-drishti {
+  transform: scale(1.05); /* Zoom effect on hover */
+}
+
+.janam-raag {
+  color: #000000;
+  font-weight: 800;
+  font-size: 1.6rem;
+}
+
+.janam-taal {
+  color: #333333;
+  font-size: 1.1rem;
+  font-style: italic;
+}
+
+.bindu-swar {
+  padding: 14px;
+}
+
+/* Utsav Darshan (Event Section) */
+.utsav-darshan {
+  color: #551A8B;
+  font-size: 2.5rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  position: absolute;
+}
+
+.mela-sankalp {
+  border-radius: 20px;
+  background: #FFFFFF;
+  border: 2px solid #7D4CAF; /* Lighter purple border around the card */
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+  transition: box-shadow 0.4s ease;
+  overflow: hidden;
+}
+
+.mela-sankalp:hover {
+  box-shadow: 0 15px 40px rgba(85, 26, 139, 0.3);
+}
+
+.rangoli-weave {
+  position: relative;
+  width: 100%;
+  height: 240px;
+  overflow: hidden;
+  border-bottom: 2px dashed #551A8B;
+}
+
+.sankalp-drishti {
+  width: 100%;
+  height: 100%;
+  transition: transform 0.4s ease;
+}
+
+.mela-sankalp:hover .sankalp-drishti {
+  transform: scale(1.05);
+}
+
+.sankalp-abhivadan {
+  color: #551A8B;
+  font-weight: 700;
+  font-size: 1.5rem;
+}
+
+.sankalp-kavya {
+  color: #000000;
+  font-size: 1rem;
+}
+
+.sankalp-mulya {
+  color: #3C1361;
+  font-weight: 600;
+}
+
+.sangam-rhythm {
+  padding: 14px;
+}
+
+/* Niti Mandir (Modal) */
+.niti-mandir .modal-content {
+  border-radius: 20px;
+  border: 3px solid #551A8B;
+  background: #FFFFFF;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.3), inset 0 0 10px rgba(85, 26, 139, 0.1);
+}
+
+.shloka-sanctum {
+  background: #FFFFFF;
+  padding: 25px;
+}
+
+.shloka-verse {
+  color: #551A8B;
+  font-weight: 700;
+  font-size: 1.2rem;
+}
+
+.niti-sanket {
+  padding: 14px;
+}
+.event-filter-section {
+  background: #FFFFFF; /* Solid white background to stand out */
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 0 5px 20px rgba(85, 26, 139, 0.2);
+  position: relative;
+  z-index: 2; /* Above background */
+  border: 2px solid #551A8B;
+}
+
+.filter-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.filter-label {
+  color: #551A8B;
+  font-weight: 700;
+  font-size: 1.1rem;
+  margin-bottom: 8px;
+}
+
+.filter-input,
+.filter-select {
+  border: 2px solid #7D4CAF;
+  border-radius: 10px;
+  padding: 10px;
+  font-size: 1rem;
+  color: #333333;
+  background: #FFFFFF;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.filter-input:focus,
+.filter-select:focus {
+  border-color: #551A8B;
+  box-shadow: 0 0 8px rgba(85, 26, 139, 0.3);
+  outline: none;
+}
+
+.filter-input::placeholder {
+  color: #999999;
+  font-style: italic;
+}
+
+/* Event Cards */
+.mela-sankalp {
+  border-radius: 20px;
+  background: #FFFFFF;
+  border: 2px solid #7D4CAF;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+  transition: box-shadow 0.4s ease;
+  position: relative;
+  z-index: 2; /* Above background */
+}
+
+.mela-sankalp:hover {
+  box-shadow: 0 15px 40px rgba(85, 26, 139, 0.3);
+}
+
+.rangoli-weave {
+  position: relative;
+  overflow: hidden;
+  border-bottom: 2px dashed #551A8B;
+}
+
+.sankalp-drishti {
+  height: 240px;
+  transition: transform 0.4s ease;
+}
+
+.mela-sankalp:hover .sankalp-drishti {
+  transform: scale(1.05);
+}
+
+.sankalp-abhivadan {
+  color: #551A8B;
+  font-weight: 700;
+  font-size: 1.5rem;
+}
+
+.sankalp-kavya {
+  color: #000000;
+  font-size: 1rem;
+}
+
+.sankalp-mulya {
+  color: #3C1361;
+  font-weight: 600;
+}
+
+.sangam-rhythm {
+  padding: 14px;
+}
+
+/* Niti Mandir (Modal) */
+.niti-mandir .modal-content {
+  border-radius: 20px;
+  border: 3px solid #551A8B;
+  background: #FFFFFF;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.3), inset 0 0 10px rgba(85, 26, 139, 0.1);
+}
+
+.shloka-sanctum {
+  background: #FFFFFF;
+  padding: 25px;
+}
+
+.shloka-verse {
+  color: #551A8B;
+  font-weight: 700;
+  font-size: 1.2rem;
+}
+
+.niti-sanket {
+  padding: 14px;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 767.98px) {
+  .dreamevent-canvas {
+    padding: 0 1rem;
+  }
+
+  .event-filter-section {
+    padding: 15px;
+  }
+
+  .filter-label {
+    font-size: 1rem;
+  }
+
+  .filter-input,
+  .filter-select {
+    font-size: 0.9rem;
+    padding: 8px;
+  }
+
+  .sankalp-drishti {
+    height: 180px;
+  }
+}
+
+
+
+
+
+
+
+/* DreamEvent Canvas */
+.dreamevent-canvas {
+  padding: 0 3rem;
+  background: #FFFFFF;
+  font-family: 'Roboto', sans-serif;
+  position: relative;
+  overflow: hidden;
+}
+
+.dreamevent-canvas::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url('data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400"%3E%3Crect x="0" y="0" width="400" height="400" fill="%23FFFFFF"/%3E%3Cpath d="M0,50 Q100,20 200,50 T400,50" fill="none" stroke="%23551A8B" stroke-width="2" opacity="0.25"/%3E%3Cpath d="M0,350 Q100,380 200,350 T400,350" fill="none" stroke="%237D4CAF" stroke-width="1.5" opacity="0.2"/%3E%3Cpolyline points="50,100 100,70 150,100 200,70 250,100" fill="none" stroke="%233C1361" stroke-width="1" opacity="0.15"/%3E%3Ccircle cx="80" cy="80" r="12" fill="%23551A8B" opacity="0.1"/%3E%3Ccircle cx="320" cy="320" r="10" fill="%237D4CAF" opacity="0.08"/%3E%3Cpath d="M150,150 Q170,130 190,150 T230,150" fill="none" stroke="%23000000" stroke-width="0.8" opacity="0.05"/%3E%3Cpath d="M250,250 Q270,230 290,250 T330,250" fill="none" stroke="%233C1361" stroke-width="0.6" opacity="0.07"/%3E%3C/svg%3E') repeat;
+  z-index: 0;
+}
+
+/* Royal Purple Palette */
+.bg-purple {
+  background-color: #551A8B !important;
+}
+
+.btn-purple {
+  background: linear-gradient(135deg, #7D4CAF, #551A8B);
+  border: none;
+  color: #FFFFFF;
+  padding: 14px 28px;
+  font-weight: 700;
+  border-radius: 60px;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.4s ease;
+}
+
+.btn-purple:hover {
+  background: linear-gradient(135deg, #551A8B, #3C1361);
+  color: #FFFFFF;
+  box-shadow: 0 0 20px rgba(85, 26, 139, 0.5);
+}
+
+.btn-outline-purple {
+  border: 3px solid #551A8B;
+  color: #551A8B;
+  padding: 12px 26px;
+  font-weight: 600;
+  border-radius: 60px;
+  background: #FFFFFF;
+  transition: all 0.4s ease;
+}
+
+.btn-outline-purple:hover {
+  background: #551A8B;
+  color: #FFFFFF;
+  box-shadow: 0 0 15px rgba(85, 26, 139, 0.4);
+}
+
+/* Mahaul Sabha (Hero Section) */
+.mahaul-sabha {
+  margin-top: 80px;
+  background: linear-gradient(150deg, #551A8B 20%, #000000 100%);
+  border: 4px dashed #FFFFFF;
+  border-radius: 15px;
+  padding: 60px;
+  position: relative;
+  z-index: 1;
+}
+
+.tansen-crown {
+  color: #FFFFFF;
+  font-size: 3.5rem;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  background: linear-gradient(90deg, #FFFFFF, #7D4CAF);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.sangit-whisper {
+  color: #FFFFFF;
+  font-size: 1.4rem;
+  font-style: italic;
+  text-shadow: 0 2px 5px rgba(0, 0, 0, 0.4);
+}
+
+.rang-path {
+  font-size: 1.3rem;
+}
+
+/* Janam Kshetra (Sidebar) */
+.janam-kshetra {
+  background: #FFFFFF;
+  border: 3px double #551A8B; /* Double purple border */
+  border-radius: 20px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2), inset 0 0 10px rgba(85, 26, 139, 0.1);
+  overflow: hidden; /* Ensures image stays within borders */
+}
+
+.janam-image-weave {
+  position: relative;
+  width: 100%;
+  height: 240px; /* Same height as event cards */
+  overflow: hidden; /* Keeps image within bounds */
+  border-bottom: 2px dashed #551A8B; /* Dashed border below image */
+}
+
+.janam-drishti {
+  width: 100%; /* Full width of the card */
+  height: 100%; /* Matches janam-image-weave height */
+  transition: transform 0.4s ease;
+}
+
+.janam-kshetra:hover .janam-drishti {
+  transform: scale(1.05); /* Zoom effect on hover */
+}
+
+.janam-raag {
+  color: #000000;
+  font-weight: 800;
+  font-size: 1.6rem;
+}
+
+.janam-taal {
+  color: #333333;
+  font-size: 1.1rem;
+  font-style: italic;
+}
+
+.bindu-swar {
+  padding: 14px;
+}
+
+/* Utsav Darshan (Event Section) */
+.utsav-darshan {
+  color: #551A8B;
+  font-size: 2.5rem;
+  font-weight: 800;
+  margin-bottom: 40px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.mela-sankalp {
+  border-radius: 6px;
+  background: #FFFFFF;
+  border: 2px solid #7D4CAF; /* Lighter purple border around the card */
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+  transition: box-shadow 0.4s ease;
+  overflow: hidden;
+}
+
+.mela-sankalp:hover {
+  box-shadow: 0 15px 40px rgba(85, 26, 139, 0.3);
+}
+
+.rangoli-weave {
+  position: relative;
+  width: 100%;
+  height: 240px;
+  overflow: hidden;
+  border-bottom: 2px dashed #551A8B;
+}
+
+.sankalp-drishti {
+  width: 100%;
+  height: 100%;
+  transition: transform 0.4s ease;
+}
+
+.mela-sankalp:hover .sankalp-drishti {
+  transform: scale(1.05);
+}
+
+.sankalp-abhivadan {
+  color: #551A8B;
+  font-weight: 700;
+  font-size: 1.5rem;
+}
+
+.sankalp-kavya {
+  color: #000000;
+  font-size: 1rem;
+}
+
+.sankalp-mulya {
+  color: #3C1361;
+  font-weight: 600;
+}
+
+.sangam-rhythm {
+  padding: 14px;
+}
+
+/* Niti Mandir (Modal) */
+.niti-mandir .modal-content {
+  border-radius: 13px;
+  border: 3px solid #551A8B;
+  background: #FFFFFF;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.3), inset 0 0 10px rgba(85, 26, 139, 0.1);
+}
+
+.shloka-sanctum {
+  background: #FFFFFF;
+  padding: 25px;
+}
+
+.shloka-verse {
+  color: #551A8B;
+  font-weight: 700;
+  font-size: 1.2rem;
+}
+
+.niti-sanket {
+  padding: 14px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 767.98px) {
+  .rangoli-weave {
+    height: 180px;
+  }
+  .janam-image-weave {
+    height: 180px; /* Same height adjustment for mobile */
+  }
+}

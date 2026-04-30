@@ -1,0 +1,160 @@
+/* AdminAbout.css */
+
+/* Enhanced shadow for a floating effect */
+.shadow-lg {
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15) !important;
+    transition: box-shadow 0.3s ease;
+  }
+  
+  .shadow-lg:hover {
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2) !important;
+  }
+  
+  /* Card header with a vibrant gradient and subtle shine */
+  .card-header {
+    background: linear-gradient(135deg, #6F2DA8 0%, #4B1D7A 50%, #8A4EC2 100%);
+    position: relative;
+    overflow: hidden;
+  }
+    
+    .card-header1 {
+      background: linear-gradient(135deg, #010101 0%, #0e0d0f 50%, #080609 100%);
+      position: relative;
+      overflow: hidden;
+    }
+  
+    .card-header1::after {
+      content: '';
+      position: absolute;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background: rgba(190, 163, 214, 0.1);
+      transform: rotate(30deg);
+      transition: all 0.5s ease;
+    }
+  .card-header::after {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: rgba(255, 255, 255, 0.1);
+    transform: rotate(30deg);
+    transition: all 0.5s ease;
+  }
+  
+  .card-header:hover::after {
+    left: 150%;
+    top: 150%;
+  }
+  
+  /* Bold and modern form labels */
+  .form-label.fw-bold {
+    color: #2c2c2c;
+    font-size: 1.2rem;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+  }
+  
+  /* List group items with a sleek, interactive look */
+  .list-group-item {
+    border: 1px solid #e0e0e0;
+    background: linear-gradient(to right, #f8f9fa, #fdfdfd);
+    border-radius: 8px !important;
+    transition: transform 0.2s ease, background 0.3s ease;
+  }
+  
+  .list-group-item:hover {
+    transform: translateY(-3px);
+    background: linear-gradient(to right, #f0f2f5, #f8f9fa);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  }
+  
+  .list-group-item span {
+    font-size: 1rem;
+    color: #444;
+    font-weight: 500;
+  }
+  
+  /* Primary button with a gradient and glow effect */
+  /* .btn-primary {
+    background: linear-gradient(45deg, #6F2DA8, #8A4EC2);
+    border: none;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+  }
+   */
+  .btn-primary::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    background: rgba(255, 255, 255, 0.2); 
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    transition: width 0.6s ease, height 0.6s ease;
+    z-index: -1;
+  }
+  
+  /* .btn-primary:hover::before {
+    width: 300px;
+    height: 300px;
+  } */
+  
+  .btn-primary:hover {
+    background: linear-gradient(45deg, #4B1D7A, #6F2DA8);
+    box-shadow: 0 8px 20px rgba(111, 45, 168, 0.4);
+    /* transform: translateY(-2px); */
+  }
+  
+  /* Outline primary button with a subtle animation */
+  .btn-outline-primary {
+    border: 2px solid #6F2DA8;
+    color: #6F2DA8;
+    background: transparent;
+    transition: all 0.3s ease;
+  }
+  
+  .btn-outline-primary:hover {
+    background: #6F2DA8;
+    color: #fff;
+    border-color: #6F2DA8;
+    box-shadow: 0 5px 15px rgba(111, 45, 168, 0.3);
+    transform: scale(1.05);
+  }
+  
+  /* Outline danger button with a pop effect */
+  .btn-outline-danger {
+    border: 2px solid #dc3545;
+    color: #dc3545;
+    background: transparent;
+    transition: all 0.3s ease;
+  }
+  
+  .btn-outline-danger:hover {
+    background: #dc3545;
+    color: #fff;
+    border-color: #dc3545;
+    box-shadow: 0 5px 15px rgba(220, 53, 69, 0.3);
+    transform: scale(1.05);
+  }
+  
+  /* Form control hover effect */
+  .form-control {
+    transition: all 0.3s ease;
+  }
+  
+  .form-control:focus {
+    border-color: #6F2DA8;
+    box-shadow: 0 0 10px rgba(111, 45, 168, 0.2);
+  }
+  
+  /* Card body with a subtle gradient background */

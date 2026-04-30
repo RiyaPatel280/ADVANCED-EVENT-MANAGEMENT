@@ -1,0 +1,27 @@
+/* AdminPayments.css */
+.shadow-lg {
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15) !important;
+  }
+  
+  .card-header {
+    background: linear-gradient(135deg, #6F2DA8, #4B1D7A);
+  }
+  
+  .table th {
+    font-weight: 600;
+    color: #f9f9fb;
+
+  }
+  
+  .table td {
+    vertical-align: middle;
+  }
+  
+  .table-striped tbody tr:nth-of-type(odd) {
+    background-color: #f9f9fb;
+  }
+  
+  .table-hover tbody tr:hover {
+    background-color: #f0f2f5;
+    transition: background-color 0.3s ease;
+  }

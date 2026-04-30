@@ -1,0 +1,146 @@
+/* Event Dashboard Container */
+.event-dashboard-container {
+    background-color: #F8F9FA;
+    font-family: 'Roboto', sans-serif;
+    padding: 0 1.5rem;
+}
+
+/* Event Dashboard Row */
+.event-dashboard-row {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+/* Main Content Area */
+.event-content-area {
+    width: 100%;
+    overflow-y: auto;
+    max-height: calc(100vh - 100px);
+    -ms-overflow-style: none; /* Hide scrollbar in IE and Edge */
+    scrollbar-width: none; /* Hide scrollbar in Firefox */
+}
+
+.event-content-area::-webkit-scrollbar {
+    display: none; /* Hide scrollbar in Chrome, Safari, and Opera */
+}
+
+.event-overview-title {
+    color: #6F2DA8;
+    font-weight: 700;
+    font-size: 1.8rem;
+}
+
+/* Stats Cards */
+.event-stats-row {
+    display: flex;
+    flex-wrap: nowrap; /* Prevent wrapping to keep cards in one line */
+    gap: 1.5rem;
+    justify-content: space-between; /* Distribute cards evenly */
+}
+
+.event-stat-col {
+    flex: 1 1 0; /* Equal width for all cards */
+    min-width: 0; /* Prevent overflow */
+}
+
+.event-total-card,
+.event-registered-card,
+.event-booked-card {
+    background: #FFFFFF;
+    border: 1px solid #E6D9F2;
+    border-radius: 8px;
+    padding: 1.5rem;
+    text-align: center;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.event-total-card {
+    background-color: #6F2DA8; /* From AdminDashboard user-stat */
+    color: #FFFFFF;
+}
+
+.event-registered-card {
+    background-color: #8B5ACF; /* From AdminDashboard organizer-stat */
+    color: #FFFFFF;
+}
+
+.event-booked-card {
+    background-color: #4B1C7A; /* From AdminDashboard event-stat */
+    color: #FFFFFF;
+}
+
+.event-total-card:hover,
+.event-registered-card:hover,
+.event-booked-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.event-card-title {
+    font-weight: 700;
+    font-size: 1.2rem;
+    margin-bottom: 0.75rem;
+}
+
+.event-card-value {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin: 0;
+}
+
+.event-card-subtitle {
+    font-size: 0.9rem;
+    margin-top: 0.5rem;
+    opacity: 0.9;
+}
+
+/* Pie Chart Section */
+.event-chart-row {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.event-chart-container {
+    width: 100%;
+    border: 1px solid #E6D9F2;
+    border-radius: 8px;
+    padding: 1.5rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    background-color: transparent;
+}
+
+.event-chart-title {
+    color: #6F2DA8;
+    font-weight: 700;
+    font-size: 1.4rem;
+    margin-bottom: 1rem;
+}
+
+.event-chart-wrapper {
+    background: #F1F3F5;
+    padding: 1rem;
+    border-radius: 6px;
+    overflow: hidden;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .event-stats-row {
+        flex-wrap: nowrap; /* Still no wrapping on small screens */
+        overflow-x: auto; /* Horizontal scrolling if cards don’t fit */
+        gap: 1rem;
+    }
+
+    .event-stat-col {
+        min-width: 250px; /* Minimum width to prevent squashing */
+    }
+
+    .event-overview-title {
+        font-size: 1.5rem;
+    }
+
+    .event-card-value {
+        font-size: 2rem;
+    }
+}

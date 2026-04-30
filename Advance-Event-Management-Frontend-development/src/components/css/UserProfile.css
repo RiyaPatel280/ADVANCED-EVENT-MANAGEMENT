@@ -1,0 +1,426 @@
+/* Color Palette */
+:root {
+  --purple: #551A8B;       /* Base color */
+  --light-purple: #7D4DB8; /* Lighter shade */
+  --dark-purple: #3A1260;  /* Darker shade */
+  --white: #FFFFFF;
+  --black: #000000;
+  /* White-shaded versions of purple and dark-purple */
+  --lightened-purple: #A68BC5; /* Lightened from #551A8B */
+  --lightened-dark-purple: #7E6199; /* Lightened from #3A1260 */
+}
+
+/* Event Profile Card */
+.event-profile-card {
+  border-radius: 20px;
+  background: linear-gradient(135deg, var(--lightened-purple), var(--lightened-dark-purple));
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  border: 2px solid var(--black);
+}
+
+.event-profile-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+}
+
+/* Event Background with Confetti */
+.event-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, var(--lightened-purple), var(--lightened-dark-purple));
+  z-index: 0;
+}
+
+.spotlight-beam {
+  position: absolute;
+  top: -50%;
+  left: 50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.2), transparent 70%);
+  transform: translateX(-50%) rotate(45deg);
+  opacity: 0.5;
+}
+
+.confetti {
+  position: absolute;
+  font-size: 1.5rem;
+  animation: confetti-fall 4s infinite ease-in-out;
+}
+
+.confetti-1 {
+  top: 10%;
+  left: 20%;
+  animation-delay: 0s;
+}
+
+.confetti-2 {
+  top: 30%;
+  right: 15%;
+  animation-delay: 1s;
+}
+
+.confetti-3 {
+  top: 50%;
+  left: 40%;
+  animation-delay: 2s;
+}
+
+@keyframes confetti-fall {
+  0% { transform: translateY(-100%) rotate(0deg); opacity: 1; }
+  100% { transform: translateY(100vh) rotate(360deg); opacity: 0; }
+}
+
+/* Enhanced Marquee Banner Title */
+.marquee-banner {
+  position: relative;
+  background: var(--black);
+  padding: 15px 40px;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  border: 2px solid var(--white);
+}
+
+.event-title {
+  color: var(--white);
+  text-shadow: 0 0 5px var(--black), 0 0 15px var(--light-purple), 0 0 25px var(--purple);
+  font-family: 'Arial', sans-serif;
+  letter-spacing: 3px;
+  font-size: 2.5rem; /* Larger for emphasis */
+  background: linear-gradient(90deg, var(--light-purple), var(--white), var(--light-purple));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  animation: title-glow 3s infinite alternate;
+}
+
+@keyframes title-glow {
+  0% { text-shadow: 0 0 5px var(--black), 0 0 10px var(--light-purple); }
+  100% { text-shadow: 0 0 10px var(--black), 0 0 20px var(--purple), 0 0 30px var(--light-purple); }
+}
+
+.marquee-lights {
+  position: absolute;
+  top: -10px;
+  left: 0;
+  width: 100%;
+  height: 10px;
+  background: linear-gradient(90deg, var(--white) 0%, transparent 20%, var(--white) 40%, transparent 60%, var(--white) 80%, transparent 100%);
+  animation: marquee-lights 2s infinite linear;
+}
+
+@keyframes marquee-lights {
+  0% { background-position: 0; }
+  100% { background-position: 100px; }
+}
+
+/* Updated Event Badge (Avatar) */
+/* Updated Event Badge (Avatar) */
+.event-badge {
+  position: relative;
+  width: 130px;
+  height: 150px;
+  background: var(--light-gray);
+  clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--white);
+  font-size: 4.5rem;
+  border: 3px solid var(--pink);
+  box-shadow: 0 0 15px var(--pink);
+  /* Removed transition property to disable animation */
+}
+
+.event-badge:hover {
+  /* Removed transform properties to disable animation */
+  box-shadow: 0 0 25px var(--pink), 0 0 40px var(--teal);
+}
+
+.badge-icon {
+  z-index: 1;
+  transition: transform 0.3s ease;
+}
+
+.event-badge:hover .badge-icon {
+  transform: scale(1.2); /* Slight zoom on hover */
+}
+
+.ribbon-banner {
+  position: absolute;
+  bottom: -15px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--purple);
+  color: var(--white);
+  padding: 8px 20px;
+  font-size: 1.2rem;
+  font-weight: bold;
+  border-radius: 8px;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.3);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+@keyframes badge-glow {
+  0% { box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3); }
+  50% { box-shadow: 0 5px 25px rgba(255, 255, 255, 0.5); }
+  100% { box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3); }
+}
+
+@keyframes badge-rotate {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Ticket Info Cards */
+.ticket-info {
+  max-width: 500px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.info-ticket {
+  position: relative;
+  background: rgba(255, 255, 255, 0.1);
+  border: 2px solid var(--black);
+  border-radius: 10px;
+  padding: 15px 25px;
+  color: var(--white);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.info-ticket.name-ticket {
+  background: linear-gradient(90deg, var(--light-purple), var(--dark-purple));
+  padding: 20px;
+  border-radius: 15px;
+  border: 3px solid var(--white);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.ticket-label {
+  color: var(--black);
+  font-weight: bold;
+  margin-right: 10px;
+}
+
+.ticket-label.name-label {
+  color: var(--white);
+  font-weight: bold;
+  font-size: 1.5rem;
+  text-transform: uppercase;
+  margin-right: 15px;
+  text-shadow: 0 0 5px var(--black);
+}
+
+.ticket-value {
+  color: var(--white);
+}
+
+.ticket-value.name-value {
+  color: var(--white);
+  font-size: 1.8rem;
+  font-family: 'Arial', sans-serif;
+  letter-spacing: 2px;
+  font-weight: 600;
+  text-shadow: 0 0 10px var(--light-purple);
+}
+
+/* VIP Pass Button */
+.vip-pass-button {
+  background: var(--black);
+  border: 2px solid var(--white);
+  color: var(--white);
+  padding: 12px 35px;
+  border-radius: 30px 10px 30px 10px;
+  transition: all 0.3s ease;
+  font-weight: bold;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.vip-pass-button:hover {
+  background: var(--white);
+  color: var(--black);
+  transform: scale(1.05);
+}
+
+.vip-pass-button::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -10px;
+  width: 20px;
+  height: 100%;
+  background: var(--black);
+  border-radius: 50%;
+  transform: translateX(-50%);
+  transition: transform 0.3s ease;
+}
+
+.vip-pass-button:hover::before {
+  transform: translateX(100%);
+}
+
+/* Events Section */
+.events-section {
+  margin-top: 70px;
+}
+
+.event-card {
+  position: relative;
+  border-radius: 30px;
+  background: var(--white);
+  overflow: hidden;
+  transition: all 0.3s ease;
+  border: 4px solid var(--light-purple);
+  min-height: 320px;
+  max-width: 100%;
+  margin: 0 auto;
+}
+
+.event-card:hover {
+  transform: translateY(-15px) scale(1.03);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+  border-color: var(--purple);
+}
+
+.event-card-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(180deg, rgba(125, 77, 184, 0.1), rgba(58, 18, 96, 0.2));
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.event-card:hover .event-card-overlay {
+  opacity: 1;
+}
+
+.event-card-header {
+  height: 100px;
+  background: linear-gradient(135deg, var(--light-purple), var(--purple));
+  position: relative;
+  clip-path: polygon(0 0, 100% 0, 100% 70%, 0 100%);
+}
+
+.event-card-header::after {
+  content: "✨";
+  position: absolute;
+  top: 25px;
+  right: 30px;
+  font-size: 2.5rem;
+  color: var(--white);
+  animation: sparkle 2s infinite;
+}
+
+@keyframes sparkle {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.3; }
+}
+
+.event-card .card-title {
+  color: var(--purple);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-size: clamp(1.25rem, 3vw, 1.75rem);
+}
+
+.event-card .card-text {
+  font-size: clamp(1rem, 2vw, 1.25rem);
+}
+
+.btn-outline-purple {
+  border-color: var(--purple);
+  color: var(--purple);
+  border-radius: 30px;
+  transition: all 0.3s ease;
+}
+
+.btn-outline-purple:hover {
+  background: var(--purple);
+  color: var(--white);
+  transform: scale(1.2);
+}
+
+.btn-outline-black {
+  border-color: var(--black);
+  color: var(--black);
+  border-radius: 30px;
+  transition: all 0.3s ease;
+}
+
+.btn-outline-black:hover {
+  background: var(--black);
+  color: var(--white);
+  transform: scale(1.2);
+}
+
+.text-light-purple {
+  color: var(--light-purple);
+}
+
+/* Modal */
+.modal-purple-gradient {
+  background: linear-gradient(135deg, var(--purple), var(--dark-purple));
+  border-radius: 30px;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+}
+
+.modal-header, .modal-footer {
+  border: none;
+}
+
+.btn-close-white {
+  filter: invert(1);
+}
+
+.btn-purple {
+  background: var(--purple);
+  color: var(--white);
+  border: none;
+  border-radius: 30px;
+}
+
+.btn-purple:hover {
+  background: var(--dark-purple);
+}
+
+/* Spinner */
+.spinner-border.text-purple {
+  border-color: var(--purple);
+  border-right-color: transparent;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 576px) {
+  .event-card {
+    min-height: 280px;
+  }
+  .event-card-header {
+    height: 80px;
+  }
+  .event-card-header::after {
+    font-size: 2rem;
+    top: 20px;
+    right: 20px;
+  }
+  .info-ticket {
+    text-align: center;
+  }
+}
+
+@media (min-width: 992px) {
+  .event-card {
+    max-width: 360px;
+  }
+}

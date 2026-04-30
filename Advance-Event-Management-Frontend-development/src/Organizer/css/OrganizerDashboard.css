@@ -1,0 +1,73 @@
+.dashboard-container {
+  min-height: 100vh;
+  background-color: #f8f9fa;
+}
+
+.sidebar.fixed-left {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1030;
+  overflow-y: auto; /* Sidebar can scroll if needed */
+  overflow: hidden;
+}
+
+.content-container {
+  height: 100vh;
+  overflow-y: scroll; /* Enables scrolling */
+  -ms-overflow-style: none; /* Hide scrollbar in IE and Edge */
+  scrollbar-width: none; /* Hide scrollbar in Firefox */
+}
+
+/* Hide scrollbar in Chrome, Safari, and Opera */
+.content-container::-webkit-scrollbar {
+  display: none;
+}
+
+.notifications {
+  background-color: white;
+  padding: 15px;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+}
+
+.alert {
+  margin-bottom: 10px;
+}
+
+.sub-menu {
+  background-color: #343a40;
+  border-radius: 5px;
+}
+
+.sub-menu .nav-link {
+  color: #adb5bd;
+}
+
+.sub-menu .nav-link:hover {
+  color: #fff;
+}
+
+.sub-menu .nav-link.active {
+  color: #fff;
+  background-color: #495057;
+}
+
+/* Style for dropdown toggle with icon */
+.dropdown-toggle {
+  cursor: pointer;
+}
+
+.dropdown-toggle i {
+  font-size: 1.2rem; /* Increased size for a bolder look */
+  margin-left: 8px; /* Space between text and icon */
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5); /* Adds a shadow for boldness */
+  color: #fff; /* Ensure visibility against dark background */
+}
+
+
+
+
+
+

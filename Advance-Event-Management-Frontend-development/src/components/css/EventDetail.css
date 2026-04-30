@@ -1,0 +1,209 @@
+/* EventDetail.css */
+
+/* Full-Screen Container */
+.ed-event-detail-container {
+  width: 100vw; /* Full viewport width */
+  min-height: 100vh; /* Full viewport height */
+  background: #FFFFFF; /* White background */
+  border: 2px solid #551A8B; /* Deep purple border */
+  margin: 0; /* Remove margins for full-screen */
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 0 20px rgba(85, 26, 139, 0.2); /* Full-screen shadow */
+}
+
+/* Loading Spinner Container */
+.ed-loading-container {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: #FFFFFF;
+  border: 2px solid #551A8B;
+}
+
+.ed-loading-spinner {
+  color: #551A8B; /* Deep purple spinner */
+  width: 60px; /* Larger for full-screen */
+  height: 60px;
+}
+
+.ed-loading-text {
+  margin-top: 20px;
+  font-size: 20px; /* Larger text */
+  font-weight: bold;
+  color: #551A8B; /* Deep purple */
+}
+
+/* Error and No Event Alerts */
+.ed-error-alert, .ed-no-event-alert {
+  width: 100%;
+  max-width: 800px; /* Constrain width for readability */
+  margin: 0 auto;
+  padding: 30px;
+  border: 2px solid #551A8B; /* Deep purple border */
+  border-radius: 8px;
+  background: #FFFFFF; /* White background */
+  color: #000000; /* Black text */
+  box-shadow: 0 4px 12px rgba(85, 26, 139, 0.3); /* Subtle shadow */
+  text-align: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.ed-error-alert h4, .ed-no-event-alert h5 {
+  color: #551A8B; /* Deep purple */
+  margin: 0;
+  font-size: 24px; /* Larger for full-screen */
+}
+
+/* Event Image */
+.ed-event-image-container {
+  width: 100vw;
+  height: 50vh; /* Maintain original height */
+  position: relative;
+  border-bottom: 2px solid #551A8B; /* Deep purple divider */
+}
+
+.ed-event-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Price Badge */
+.ed-event-price-badge {
+  background: #551A8B; /* Deep purple background */
+  color: #FFFFFF; /* White text */
+  font-size: 1.5rem; /* Larger for full-screen */
+  padding: 12px 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(85, 26, 139, 0.4); /* Stronger shadow */
+}
+
+/* Main Content Container */
+.py-5 {
+  width: 100%;
+  max-width: 100vw; /* Full width */
+  padding: 40px 20px; /* Increased padding */
+  flex-grow: 1; /* Expand to fill remaining height */
+}
+
+/* Event Title */
+.ed-event-title {
+  font-size: 36px; /* Larger for full-screen */
+  font-weight: bold;
+  color: #551A8B; /* Deep purple */
+  border-bottom: 2px solid #551A8B; /* Underline */
+  padding-bottom: 15px;
+  margin-bottom: 20px;
+}
+
+/* Event Description */
+.ed-event-description {
+  font-size: 18px; /* Larger for full-screen */
+  color: #000000; /* Black text */
+  line-height: 1.6;
+  margin-bottom: 30px;
+}
+
+/* Buttons */
+.ed-payment-details-button, .ed-payment-button {
+  background: #551A8B; /* Deep purple background */
+  color: #FFFFFF; /* White text */
+  font-size: 16px; /* Larger for full-screen */
+  font-weight: bold;
+  padding: 15px 30px; /* Larger padding */
+  border: none;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(85, 26, 139, 0.3); /* Subtle shadow */
+  transition: background 0.3s ease;
+  width: 100%; /* Full width for consistency */
+  max-width: 200px; /* Constrain width */
+}
+
+.ed-payment-details-button:hover, .ed-payment-button:hover {
+  background: #3C1265; /* Darker purple on hover */
+  color: #FFFFFF;
+}
+
+.ed-back-button {
+  background: #FFFFFF; /* White background */
+  color: #551A8B; /* Deep purple text */
+  font-size: 16px; /* Larger for full-screen */
+  font-weight: bold;
+  padding: 15px 30px; /* Larger padding */
+  border: 2px solid #551A8B; /* Deep purple border */
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(85, 26, 139, 0.3); /* Subtle shadow */
+  transition: background 0.3s ease;
+  width: 100%; /* Full width for consistency */
+  max-width: 200px; /* Constrain width */
+}
+
+.ed-back-button:hover {
+  background: rgba(85, 26, 139, 0.1); /* Light purple tint on hover */
+}
+
+/* Section Titles */
+.ed-section-title {
+  font-size: 22px; /* Larger for full-screen */
+  font-weight: bold;
+  color: #551A8B; /* Deep purple */
+  text-transform: uppercase;
+  border-bottom: 2px solid #551A8B; /* Underline */
+  padding-bottom: 10px;
+  margin-bottom: 20px;
+}
+
+/* Highlights and Extras Items */
+.ed-highlight-item, .ed-extras-item {
+  padding: 5px 0; /* Increased padding */
+  font-size: 16px; /* Larger for full-screen */
+  /* Removed border-bottom: 1px dashed #551A8B */
+}
+
+.ed-highlight-item:last-child, .ed-extras-item:last-child {
+  /* No need for this rule since border is removed */
+}
+
+.ed-highlight-item i, .ed-extras-item i {
+  font-size: 20px; /* Larger icons */
+  color: #551A8B; /* Deep purple */
+  margin-right: 20px; /* Increased spacing */
+}
+
+.ed-highlight-item strong, .ed-extras-item strong {
+  color: #551A8B; /* Deep purple for labels */
+  font-weight: bold;
+}
+
+.ed-highlight-item span, .ed-extras-item span {
+  color: #000000; /* Black for values */
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .ed-event-title {
+    font-size: 28px;
+  }
+  .ed-event-description {
+    font-size: 16px;
+  }
+  .ed-section-title {
+    font-size: 18px;
+  }
+  .ed-highlight-item, .ed-extras-item {
+    font-size: 14px;
+  }
+  .ed-payment-details-button, .ed-payment-button, .ed-back-button {
+    font-size: 14px;
+    padding: 12px 20px;
+    max-width: 100%; /* Full width on mobile */
+  }
+}
