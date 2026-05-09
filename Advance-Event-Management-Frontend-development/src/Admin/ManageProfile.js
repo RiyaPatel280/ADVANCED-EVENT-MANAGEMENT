@@ -37,7 +37,7 @@ const ManageProfile = () => {
         return;
       }
 
-      const profileResponse = await axios.get("http://localhost:4000/api/users/user-profile", {
+      const profileResponse = await axios.get("https://advanced-event-management.onrender.com/api/users/user-profile", {
         headers: { Authorization: `Bearer ${token}` },
       });
       if (profileResponse.data.success && profileResponse.data.user) {
@@ -66,7 +66,7 @@ const ManageProfile = () => {
     try {
       const token = localStorage.getItem("token");
       const response = await axios.put(
-        `http://localhost:4000/api/users/edit-user/${userId}`,
+        `https://advanced-event-management.onrender.com/api/users/edit-user/${userId}`,
         {
           name,
           email,

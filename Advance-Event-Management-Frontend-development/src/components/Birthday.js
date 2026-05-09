@@ -35,12 +35,12 @@ const Birthday = () => {
   useEffect(() => {
     const fetchOrganizersWithServices = async () => {
       try {
-        const organizersResponse = await axios.get("http://localhost:4000/api/users/organizers");
+        const organizersResponse = await axios.get("https://advanced-event-management.onrender.com/api/users/organizers");
         const allOrganizers = organizersResponse.data;
 
         const organizersWithServices = [];
         for (const org of allOrganizers) {
-          const servicesResponse = await axios.get("http://localhost:4000/api/services", {
+          const servicesResponse = await axios.get("https://advanced-event-management.onrender.com/api/services", {
             params: { addBy: org.name },
           });
           if (servicesResponse.data.services && servicesResponse.data.services.length > 0) {
@@ -79,7 +79,7 @@ const Birthday = () => {
       }
       try {
         setLoading(true);
-        const response = await axios.get("http://localhost:4000/api/services", {
+        const response = await axios.get("https://advanced-event-management.onrender.com/api/services", {
           params: { addBy: formData.organizer },
         });
         setServices(response.data.services || []);
@@ -208,7 +208,7 @@ const Birthday = () => {
       const formDataWithAmount = { ...formData, selectedServices: transformedSelectedServices, totalAmount };
 
       const response = await axios.post(
-        "http://localhost:4000/api/add-birthday-event",
+        "https://advanced-event-management.onrender.com/api/add-birthday-event",
         formDataWithAmount,
         {
           headers: {

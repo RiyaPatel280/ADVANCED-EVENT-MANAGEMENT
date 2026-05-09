@@ -32,7 +32,7 @@ const PaymentDetail = () => {
     try {
       const token = localStorage.getItem("token");
       const response = await fetch(
-        `http://localhost:4000/api/user-birthday-event?eventDate=${state.eventDate}`,
+        `https://advanced-event-management.onrender.com/api/user-birthday-event?eventDate=${state.eventDate}`,
         {
           headers: {
             Authorization: `Bearer ${token}`,

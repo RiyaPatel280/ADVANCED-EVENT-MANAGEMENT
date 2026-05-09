@@ -20,7 +20,7 @@ const ManageFeedback = () => {
         setFeedbackList([]);
         return;
       }
-      const response = await fetch('http://localhost:4000/api/all', {
+      const response = await fetch('https://advanced-event-management.onrender.com/api/all', {
         headers: { Authorization: `Bearer ${token}` },
       });
       if (!response.ok) {
@@ -46,7 +46,7 @@ const ManageFeedback = () => {
 
     try {
       const token = localStorage.getItem('token');
-      const response = await fetch(`http://localhost:4000/api/feedback/${feedbackId}`, {
+      const response = await fetch(`https://advanced-event-management.onrender.com/api/feedback/${feedbackId}`, {
         method: 'DELETE',
         headers: {
           Authorization: `Bearer ${token}`,

@@ -3,10 +3,10 @@ import axios from "axios";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { Modal, Button, Form, Table, Container, Card, Image } from "react-bootstrap";
 
-const BIRTHDAY_API_URL = "http://localhost:4000/api/birthday-eventsbyOA";
-const SERVICES_API_URL = "http://localhost:4000/api/services";
-const ORGANIZERS_API_URL = "http://localhost:4000/api/users/organizers";
-const VENUES_API_URL = "http://localhost:4000/api/venues";
+const BIRTHDAY_API_URL = "https://advanced-event-management.onrender.com/api/birthday-eventsbyOA";
+const SERVICES_API_URL = "https://advanced-event-management.onrender.com/api/services";
+const ORGANIZERS_API_URL = "https://advanced-event-management.onrender.com/api/users/organizers";
+const VENUES_API_URL = "https://advanced-event-management.onrender.com/api/venues";
 
 const BirthdayInfo = () => {
   const [events, setEvents] = useState([]);

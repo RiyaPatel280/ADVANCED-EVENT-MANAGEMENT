@@ -12,7 +12,7 @@ const AdminDashboard = () => {
 
   useEffect(() => {
     axios
-      .get('http://localhost:4000/api/admin-stats')
+      .get('https://advanced-event-management.onrender.com/api/admin-stats')
       .then((response) => {
         setStats(response.data.stats);
         setChartData(response.data.chartData);
@@ -20,7 +20,7 @@ const AdminDashboard = () => {
       .catch((error) => console.error('Error fetching dashboard data:', error));
 
     axios
-      .get('http://localhost:4000/api/upcoming-events', {
+      .get('https://advanced-event-management.onrender.com/api/upcoming-events', {
         headers: { Authorization: `Bearer ${localStorage.getItem('token')}` },
       })
       .then((response) => {

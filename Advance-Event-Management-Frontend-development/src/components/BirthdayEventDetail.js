@@ -21,7 +21,7 @@ const BirthdayEventDetail = () => {
         }
 
         const response = await fetch(
-          `http://localhost:4000/api/birthday-events/email/${encodeURIComponent(email)}`,
+          `https://advanced-event-management.onrender.com/api/birthday-events/email/${encodeURIComponent(email)}`,
           {
             headers: {
               Authorization: `Bearer ${token}`,

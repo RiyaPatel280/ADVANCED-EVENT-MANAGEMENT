@@ -57,7 +57,7 @@ const Home = () => {
   useEffect(() => {
   const fetchTeamMembers = async () => {
     try {
-      const response = await fetch("http://localhost:4000/api/team/viewteam", {
+      const response = await fetch("https://advanced-event-management.onrender.com/api/team/viewteam", {
         method: "GET",
         headers: {
           "Content-Type": "application/json",
@@ -78,7 +78,7 @@ const Home = () => {
   fetchTeamMembers();
   const token = localStorage.getItem('token');
   axios
-  .get('http://localhost:4000/api/organizers', {
+  .get('https://advanced-event-management.onrender.com/api/organizers', {
     headers: { Authorization: `Bearer ${token}` },
   })
   .then((response) => {
@@ -108,7 +108,7 @@ const Home = () => {
   .catch((error) => console.error('Error fetching organizers:', error));
 
 axios
-  .get('http://localhost:4000/api/allcategories')
+  .get('https://advanced-event-management.onrender.com/api/allcategories')
   .then((response) => {
     const uniqueCategories = Array.from(
       new Map(response.data.map((cat) => [cat.title, cat])).values()
@@ -119,14 +119,14 @@ axios
 
 if (userEmail) {
   axios
-    .get(`http://localhost:4000/api/alluser-registrations?email=${userEmail}`)
+    .get(`https://advanced-event-management.onrender.com/api/alluser-registrations?email=${userEmail}`)
     .then((response) => {
       setRegisteredEvents(new Set(response.data.registeredEvents.map((event) => event.eventId)));
     })
     .catch((error) => console.error('Error fetching registered events:', error));
 }
 
-  axios.get('http://localhost:4000/api/allcategories')
+  axios.get('https://advanced-event-management.onrender.com/api/allcategories')
     .then(response => {
       const uniqueCategories = Array.from(
         new Map(response.data.map((cat) => [cat.title, cat])).values()
@@ -136,7 +136,7 @@ if (userEmail) {
     .catch(error => console.error('Error fetching categories:', error));
 
   if (userEmail) {
-    axios.get(`http://localhost:4000/api/alluser-registrations?email=${userEmail}`)
+    axios.get(`https://advanced-event-management.onrender.com/api/alluser-registrations?email=${userEmail}`)
       .then(response => {
         setRegisteredEvents(new Set(response.data.registeredEvents.map(event => event.eventId)));
       })
@@ -145,7 +145,7 @@ if (userEmail) {
 
   const fetchSliderImages = async () => {
     try {
-      const response = await axios.get('http://localhost:4000/api/users/images');
+      const response = await axios.get('https://advanced-event-management.onrender.com/api/users/images');
       setSliderImages(response.data);
     } catch (err) {
       console.error('Error fetching slider images:', err);
@@ -155,7 +155,7 @@ if (userEmail) {
 
   const fetchAboutData = async () => {
     try {
-      const response = await axios.get('http://localhost:4000/api/about');
+      const response = await axios.get('https://advanced-event-management.onrender.com/api/about');
       setAboutData(response.data);
       setAboutLoading(false);
     } catch (err) {
@@ -229,13 +229,13 @@ if (userEmail) {
 
     const registrationData = { ...formData, eventId: selectedEventId };
     try {
-      const response = await axios.post('http://localhost:4000/api/register', registrationData);
+      const response = await axios.post('https://advanced-event-management.onrender.com/api/register', registrationData);
       alert(response.data.message);
       setShowModal(false);
       setFormData({ name: '', email: '', phone: '', eventName: '', organizer: '', venue: '', city: '' });
       setRegisteredEvents(prev => new Set([...prev, selectedEventId]));
 
-      const notificationResponse = await axios.get(`http://localhost:4000/api/notification?email=${registrationData.email}`);
+      const notificationResponse = await axios.get(`https://advanced-event-management.onrender.com/api/notification?email=${registrationData.email}`);
       const updatedNotifications = notificationResponse.data.notifications || [];
       if (notificationUpdater) {
         notificationUpdater(updatedNotifications);
@@ -261,7 +261,7 @@ if (userEmail) {
     setContactError(null);
 
     try {
-      const response = await axios.post('http://localhost:4000/api/submit', contactFormData);
+      const response = await axios.post('https://advanced-event-management.onrender.com/api/submit', contactFormData);
       if (response.data.success) {
         setContactSuccess('Message sent successfully!');
         setContactFormData({ name: '', email: '', message: '' });
@@ -336,7 +336,7 @@ if (userEmail) {
                 <div
                   className="hero-slide-bg"
                   style={{
-                    backgroundImage: `url(http://localhost:4000${image.path})`,
+                    backgroundImage: `url(https://advanced-event-management.onrender.com${image.path})`,
                     backgroundSize: 'cover',
                     backgroundPosition: 'center',
                     backgroundRepeat: 'no-repeat',
@@ -397,7 +397,7 @@ if (userEmail) {
                   <Card className="h-100">
                     <Card.Img
                       variant="top"
-                      src={`http://localhost:4000/${category.image}`}
+                      src={`https://advanced-event-management.onrender.com/${category.image}`}
                       alt="Event Category"
                       className="w-100"
                       style={{ height: '200px'}}
@@ -616,7 +616,7 @@ if (userEmail) {
                         variant="top"
                         src={
                           member.imageUrl
-                            ? `http://localhost:4000${member.imageUrl}`
+                            ? `https://advanced-event-management.onrender.com${member.imageUrl}`
                             : "https://via.placeholder.com/300x200"
                         }
                         alt={member.name}
@@ -640,7 +640,7 @@ if (userEmail) {
                         variant="top"
                         src={
                           member.imageUrl
-                            ? `http://localhost:4000${member.imageUrl}`
+                            ? `https://advanced-event-management.onrender.com${member.imageUrl}`
                             : "https://via.placeholder.com/300x200"
                         }
                         alt={member.name}

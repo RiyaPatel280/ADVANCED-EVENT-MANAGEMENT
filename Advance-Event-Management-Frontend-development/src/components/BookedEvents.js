@@ -29,7 +29,7 @@ const BookedEvents = () => {
     setIsLoading(true);
     try {
       const token = localStorage.getItem("token");
-      const response = await fetch(`http://localhost:4000/api/booked-events?email=${email}`, {
+      const response = await fetch(`https://advanced-event-management.onrender.com/api/booked-events?email=${email}`, {
         headers: { Authorization: `Bearer ${token}` },
       });
       const data = await response.json();
@@ -49,7 +49,7 @@ const BookedEvents = () => {
   const fetchPaymentDetails = async () => {
     try {
       const token = localStorage.getItem("token");
-      const response = await fetch(`http://localhost:4000/api/check-birthday-payment-status`, {
+      const response = await fetch(`https://advanced-event-management.onrender.com/api/check-birthday-payment-status`, {
         headers: { Authorization: `Bearer ${token}` },
       });
       const data = await response.json();
@@ -90,7 +90,7 @@ const BookedEvents = () => {
     }
     try {
       const token = localStorage.getItem("token");
-      const response = await fetch(`http://localhost:4000/api/submit-feedback`, {
+      const response = await fetch(`https://advanced-event-management.onrender.com/api/submit-feedback`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

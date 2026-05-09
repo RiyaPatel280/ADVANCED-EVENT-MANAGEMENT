@@ -15,7 +15,7 @@ const LoginModal = ({ show, handleClose, handleShowSignUp, onLoginSuccess }) => 
 
     try {
       console.log("Starting login process...");
-      const response = await axios.post("http://localhost:4000/api/users/login", { email, password });
+      const response = await axios.post("https://advanced-event-management.onrender.com/api/users/login", { email, password });
       const { token, user } = response.data;
 
       console.log("API Response:", { token, user });

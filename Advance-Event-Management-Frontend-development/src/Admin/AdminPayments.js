@@ -13,7 +13,7 @@ const AdminPayments = () => {
     const fetchPayments = async () => {
       try {
         const token = localStorage.getItem('token');
-        const response = await axios.get('http://localhost:4000/api/all-payments', {
+        const response = await axios.get('https://advanced-event-management.onrender.com/api/all-payments', {
           headers: { Authorization: `Bearer ${token}` }
         });
         setPayments(response.data.payments);

@@ -18,7 +18,7 @@ const Admin = () => {
     if (!token) return navigate("/admin/image");
 
     axios
-      .get("http://localhost:4000/api/users/user-profile", {
+      .get("https://advanced-event-management.onrender.com/api/users/user-profile", {
         headers: { Authorization: `Bearer ${token}` },
       })
       .then((res) => setUser(res.data))
@@ -28,7 +28,7 @@ const Admin = () => {
       });
 
     axios
-      .get("http://localhost:4000/api/users/images", {
+      .get("https://advanced-event-management.onrender.com/api/users/images", {
         headers: { Authorization: `Bearer ${token}` },
       })
       .then((res) => setImages(res.data))
@@ -49,7 +49,7 @@ const Admin = () => {
     formData.append("image", file);
 
     try {
-      await axios.post("http://localhost:4000/api/users/upload", formData, {
+      await axios.post("https://advanced-event-management.onrender.com/api/users/upload", formData, {
         headers: {
           "Content-Type": "multipart/form-data",
           Authorization: `Bearer ${token}`,
@@ -59,7 +59,7 @@ const Admin = () => {
       setFile(null);
       setShowModal(false);
 
-      const res = await axios.get("http://localhost:4000/api/users/images", {
+      const res = await axios.get("https://advanced-event-management.onrender.com/api/users/images", {
         headers: { Authorization: `Bearer ${token}` },
       });
       setImages(res.data);
@@ -76,7 +76,7 @@ const Admin = () => {
     const token = localStorage.getItem("token");
 
     try {
-      await axios.delete(`http://localhost:4000/api/users/images/${imageId}`, {
+      await axios.delete(`https://advanced-event-management.onrender.com/api/users/images/${imageId}`, {
         headers: { Authorization: `Bearer ${token}` },
       });
       window.alert("Image deleted successfully!");
@@ -129,7 +129,7 @@ const Admin = () => {
                       <div className="image-wrapper">
                         <Card.Img
                           variant="top"
-                          src={`http://localhost:4000${image.path}`}
+                          src={`https://advanced-event-management.onrender.com${image.path}`}
                           alt="Uploaded Image"
                           className="creative-img"
                         />

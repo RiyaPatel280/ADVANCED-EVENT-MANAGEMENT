@@ -19,7 +19,7 @@
 
 //   const fetchVenues = async () => {
 //     try {
-//       const response = await axios.get("http://localhost:4000/api/venues");
+//       const response = await axios.get("https://advanced-event-management.onrender.com/api/venues");
 //       // Set venues to an empty array if the response does not contain venues
 //       setVenues(response.data.venues || []);
 //     } catch (error) {
@@ -56,7 +56,7 @@
 //       formData.append("image", image);
 
 //       // Send request to backend
-//       const response = await axios.post("http://localhost:4000/api/venues", formData, {
+//       const response = await axios.post("https://advanced-event-management.onrender.com/api/venues", formData, {
 //         headers: { "Content-Type": "multipart/form-data" },
 //       });
 
@@ -115,7 +115,7 @@
 //                 <p>Price: ${venue.price}</p>
 //                 <p>Services: {venue.services}</p>
 //                 <img
-//                   src={`http://localhost:4000/uploads/${venue.image}`}
+//                   src={`https://advanced-event-management.onrender.com/uploads/${venue.image}`}
 //                   alt={venue.name}
 //                   style={{ width: "200px", height: "200px" }}
 //                 />
@@ -156,7 +156,7 @@
 //       const token = localStorage.getItem("token");
 //       const userEmail = localStorage.getItem("userEmail");
 
-//       const response = await axios.get("http://localhost:4000/api/venues", {
+//       const response = await axios.get("https://advanced-event-management.onrender.com/api/venues", {
 //         headers: { Authorization: `Bearer ${token}` },
 //       });
 
@@ -200,14 +200,14 @@
 
 //     try {
 //       if (editingVenue) {
-//         await axios.put(`http://localhost:4000/api/venues/${editingVenue._id}`, formData, {
+//         await axios.put(`https://advanced-event-management.onrender.com/api/venues/${editingVenue._id}`, formData, {
 //           headers: { "Content-Type": "multipart/form-data",
 //           Authorization: `Bearer ${token}`, 
 //           }
 //         });
 //         alert("Venue updated successfully!");
 //       } else {
-//         await axios.post("http://localhost:4000/api/venues", formData, {
+//         await axios.post("https://advanced-event-management.onrender.com/api/venues", formData, {
 //           headers: { "Content-Type": "multipart/form-data",
 //           Authorization: `Bearer ${token}`, 
 //           }
@@ -246,7 +246,7 @@
 //   const handleDelete = async (id) => {
 //     if (window.confirm("Are you sure you want to delete this venue?")) {
 //       try {
-//         await axios.delete(`http://localhost:4000/api/venues/${id}`);
+//         await axios.delete(`https://advanced-event-management.onrender.com/api/venues/${id}`);
 //         fetchVenues();
 //         alert("Venue deleted successfully!");
 //       } catch (error) {
@@ -408,7 +408,7 @@ const AddVenue = () => {
       const token = localStorage.getItem("token");
       const userEmail = localStorage.getItem("userEmail");
 
-      const response = await axios.get("http://localhost:4000/api/venues", {
+      const response = await axios.get("https://advanced-event-management.onrender.com/api/venues", {
         headers: { Authorization: `Bearer ${token}` },
       });
 
@@ -452,7 +452,7 @@ const AddVenue = () => {
 
     try {
       if (editingVenue) {
-        await axios.put(`http://localhost:4000/api/venues/${editingVenue._id}`, formData, {
+        await axios.put(`https://advanced-event-management.onrender.com/api/venues/${editingVenue._id}`, formData, {
           headers: {
             "Content-Type": "multipart/form-data",
             Authorization: `Bearer ${token}`,
@@ -460,7 +460,7 @@ const AddVenue = () => {
         });
         alert("Venue updated successfully!");
       } else {
-        await axios.post("http://localhost:4000/api/venues", formData, {
+        await axios.post("https://advanced-event-management.onrender.com/api/venues", formData, {
           headers: {
             "Content-Type": "multipart/form-data",
             Authorization: `Bearer ${token}`,
@@ -500,7 +500,7 @@ const AddVenue = () => {
   const handleDelete = async (id) => {
     if (window.confirm("Are you sure you want to delete this venue?")) {
       try {
-        await axios.delete(`http://localhost:4000/api/venues/${id}`);
+        await axios.delete(`https://advanced-event-management.onrender.com/api/venues/${id}`);
         fetchVenues();
         alert("Venue deleted successfully!");
       } catch (error) {

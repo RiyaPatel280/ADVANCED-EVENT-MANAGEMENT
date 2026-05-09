@@ -18,7 +18,7 @@ const About = () => {
   useEffect(() => {
     const fetchAboutData = async () => {
       try {
-        const response = await axios.get('http://localhost:4000/api/about');
+        const response = await axios.get('https://advanced-event-management.onrender.com/api/about');
         setAboutData(response.data);
         setLoading(false);
       } catch (err) {

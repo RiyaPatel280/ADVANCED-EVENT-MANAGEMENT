@@ -58,7 +58,7 @@ const SignUpModal = ({ show, handleClose, handleShowLogin }) => {
 
     setIsSubmitting(true);
     try {
-      const response = await axios.post('http://localhost:4000/api/users/signup', {
+      const response = await axios.post('https://advanced-event-management.onrender.com/api/users/signup', {
         email,
         name,
         phone,

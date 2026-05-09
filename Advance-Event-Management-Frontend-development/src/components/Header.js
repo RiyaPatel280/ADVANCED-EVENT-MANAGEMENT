@@ -64,7 +64,7 @@ const Header = ({ onNotificationUpdate }) => {
     if (!userEmail) return;
 
     try {
-      const response = await fetch(`http://localhost:4000/api/notification?email=${userEmail}`);
+      const response = await fetch(`https://advanced-event-management.onrender.com/api/notification?email=${userEmail}`);
       if (!response.ok) throw new Error(`HTTP error! Status: ${response.status}`);
       const data = await response.json();
       const newNotifications = data.notifications || [];
@@ -122,7 +122,7 @@ const Header = ({ onNotificationUpdate }) => {
 
   const handleMarkAsReadAndDelete = async (notificationId) => {
     try {
-      const response = await fetch(`http://localhost:4000/api/notification/${notificationId}`, {
+      const response = await fetch(`https://advanced-event-management.onrender.com/api/notification/${notificationId}`, {
         method: 'DELETE',
       });
       if (!response.ok) throw new Error(`Failed to delete notification. Status: ${response.status}`);

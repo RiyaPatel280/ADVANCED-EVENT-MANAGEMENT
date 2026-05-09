@@ -26,7 +26,7 @@ const Contact = () => {
     setError(null);
 
     try {
-      const response = await axios.post("http://localhost:4000/api/submit", formData);
+      const response = await axios.post("https://advanced-event-management.onrender.com/api/submit", formData);
       if (response.data.success) {
         setSuccess("Message sent successfully!");
         setFormData({ name: "", email: "", message: "" }); // Reset form

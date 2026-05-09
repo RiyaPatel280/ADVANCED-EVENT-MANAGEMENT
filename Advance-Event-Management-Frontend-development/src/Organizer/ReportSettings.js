@@ -40,7 +40,7 @@ const OrganizerSettings = () => {
         return;
       }
 
-      const profileResponse = await axios.get("http://localhost:4000/api/users/user-profile", {
+      const profileResponse = await axios.get("https://advanced-event-management.onrender.com/api/users/user-profile", {
         headers: { Authorization: `Bearer ${token}` },
       });
       if (profileResponse.data.success && profileResponse.data.user) {
@@ -59,7 +59,7 @@ const OrganizerSettings = () => {
   const fetchOrganizerEvents = async () => {
     try {
       const token = localStorage.getItem("token");
-      const response = await axios.get("http://localhost:4000/api/categories", {
+      const response = await axios.get("https://advanced-event-management.onrender.com/api/categories", {
         headers: { Authorization: `Bearer ${token}` },
       });
       setEvents(response.data);
@@ -84,7 +84,7 @@ const updateProfile = async () => {
   try {
     const token = localStorage.getItem("token");
     const response = await axios.put(
-      `http://localhost:4000/api/users/edit-user/${userId}`,
+      `https://advanced-event-management.onrender.com/api/users/edit-user/${userId}`,
       {
         name,
         email,
@@ -214,7 +214,7 @@ const updateProfile = async () => {
     <div className="card border-3 shadow-sm h-100" style={{ borderColor: "#6F2DA8" }}>
       {event.image ? (
         <img
-          src={`http://localhost:4000/${event.image}`}
+          src={`https://advanced-event-management.onrender.com/${event.image}`}
           alt={event.title}
           className="card-img-top rounded-top"
           style={{ width: "100%", objectFit: "cover", height: "200px" }}

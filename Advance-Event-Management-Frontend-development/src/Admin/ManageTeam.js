@@ -15,7 +15,7 @@ const ManageTeam = () => {
       try {
         const token = localStorage.getItem("token");
         if (!token) throw new Error("No token found");
-        const response = await fetch("http://localhost:4000/api/team/viewteam", {
+        const response = await fetch("https://advanced-event-management.onrender.com/api/team/viewteam", {
           method: "GET",
           headers: {
             "Content-Type": "application/json",
@@ -47,8 +47,8 @@ const ManageTeam = () => {
     }
 
     const url = editingMember
-      ? `http://localhost:4000/api/team/update/${editingMember._id}`
-      : "http://localhost:4000/api/team/add";
+      ? `https://advanced-event-management.onrender.com/api/team/update/${editingMember._id}`
+      : "https://advanced-event-management.onrender.com/api/team/add";
     const method = editingMember ? "PUT" : "POST";
 
     try {
@@ -90,7 +90,7 @@ const ManageTeam = () => {
     try {
       const token = localStorage.getItem("token");
       if (!token) throw new Error("No token found");
-      const response = await fetch(`http://localhost:4000/api/team/delete/${id}`, {
+      const response = await fetch(`https://advanced-event-management.onrender.com/api/team/delete/${id}`, {
         method: "DELETE",
         headers: { Authorization: `Bearer ${token}` },
       });
@@ -160,7 +160,7 @@ const ManageTeam = () => {
                         <img
                           src={
                             member.imageUrl
-                              ? `http://localhost:4000${member.imageUrl}`
+                              ? `https://advanced-event-management.onrender.com${member.imageUrl}`
                               : "https://via.placeholder.com/50x50"
                           }
                           alt={member.name}

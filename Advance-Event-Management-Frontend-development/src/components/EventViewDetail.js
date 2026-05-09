@@ -84,12 +84,12 @@ const EventDetail = () => {
         let eventTypeIsBirthday = false;
 
         try {
-          const eventResponse = await axios.get(`http://localhost:4000/api/event-details/${eventId}`, {
+          const eventResponse = await axios.get(`https://advanced-event-management.onrender.com/api/event-details/${eventId}`, {
             headers: { Authorization: `Bearer ${token}` },
           });
           fetchedEvent = eventResponse.data;
         } catch (predefinedError) {
-          const birthdayResponse = await axios.get(`http://localhost:4000/api/birthday-event/${eventId}`, {
+          const birthdayResponse = await axios.get(`https://advanced-event-management.onrender.com/api/birthday-event/${eventId}`, {
             headers: { Authorization: `Bearer ${token}` },
           });
           fetchedEvent = {
@@ -111,7 +111,7 @@ const EventDetail = () => {
         setEvent(fetchedEvent);
         setIsBirthdayEvent(eventTypeIsBirthday);
 
-        const userResponse = await axios.get("http://localhost:4000/api/users/user-profile", {
+        const userResponse = await axios.get("https://advanced-event-management.onrender.com/api/users/user-profile", {
           headers: { Authorization: `Bearer ${token}` },
         });
         if (userResponse.data.success) {
@@ -121,14 +121,14 @@ const EventDetail = () => {
         }
 
         const paymentStatusResponse = await axios.get(
-          `http://localhost:4000/api/check-payment-status?${eventTypeIsBirthday ? `eventDate=${fetchedEvent.startDate}` : `eventId=${eventId}`}`,
+          `https://advanced-event-management.onrender.com/api/check-payment-status?${eventTypeIsBirthday ? `eventDate=${fetchedEvent.startDate}` : `eventId=${eventId}`}`,
           { headers: { Authorization: `Bearer ${token}` } }
         );
         setHasCompletedPayment(paymentStatusResponse.data.hasCompletedPayment);
 
         if (paymentStatusResponse.data.hasCompletedPayment) {
           const paymentDetailsResponse = await axios.get(
-            `http://localhost:4000/api/user-payment-details?${eventTypeIsBirthday ? `eventDate=${fetchedEvent.startDate}` : `eventId=${eventId}`}`,
+            `https://advanced-event-management.onrender.com/api/user-payment-details?${eventTypeIsBirthday ? `eventDate=${fetchedEvent.startDate}` : `eventId=${eventId}`}`,
             { headers: { Authorization: `Bearer ${token}` } }
           );
           setPaymentDetails(paymentDetailsResponse.data.payment);
@@ -200,7 +200,7 @@ const EventDetail = () => {
           console.log("Sending payment payload:", paymentPayload);
 
           const saveResponse = await axios.post(
-            "http://localhost:4000/api/save-payment",
+            "https://advanced-event-management.onrender.com/api/save-payment",
             paymentPayload,
             { headers: { Authorization: `Bearer ${token}` } }
           );
@@ -208,7 +208,7 @@ const EventDetail = () => {
           setHasCompletedPayment(true);
 
           const paymentDetailsResponse = await axios.get(
-            `http://localhost:4000/api/user-payment-details?${isBirthdayEvent ? `eventDate=${event.startDate}` : `eventId=${eventId}`}`,
+            `https://advanced-event-management.onrender.com/api/user-payment-details?${isBirthdayEvent ? `eventDate=${event.startDate}` : `eventId=${eventId}`}`,
             { headers: { Authorization: `Bearer ${token}` } }
           );
           console.log("Payment Details Response:", paymentDetailsResponse.data);
@@ -242,7 +242,7 @@ const EventDetail = () => {
     try {
       const token = localStorage.getItem("token");
       const response = await axios.get(
-        `http://localhost:4000/api/user-payment-details?${isBirthdayEvent ? `eventDate=${event.startDate}` : `eventId=${eventId}`}`,
+        `https://advanced-event-management.onrender.com/api/user-payment-details?${isBirthdayEvent ? `eventDate=${event.startDate}` : `eventId=${eventId}`}`,
         { headers: { Authorization: `Bearer ${token}` } }
       );
       setPaymentDetails(response.data.payment);
@@ -416,7 +416,7 @@ const EventDetail = () => {
         {event.image && (
           <div className="ed-event-image-container position-relative" style={{ width: "100vw", height: "50vh", overflow: "hidden" }}>
             <motion.img
-              src={`http://localhost:4000/${event.image}`}
+              src={`https://advanced-event-management.onrender.com/${event.image}`}
               alt={event.title || "Event Image"}
               className="ed-event-image"
               initial={{ scale: 0.95 }}

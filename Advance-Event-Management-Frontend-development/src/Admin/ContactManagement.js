@@ -14,7 +14,7 @@ const ContactManagement = () => {
   const fetchContacts = async () => {
     try {
       const token = localStorage.getItem('token');
-      const response = await axios.get('http://localhost:4000/api/all-contacts', {
+      const response = await axios.get('https://advanced-event-management.onrender.com/api/all-contacts', {
         headers: { Authorization: `Bearer ${token}` }
       });
       setContacts(response.data.contacts);
@@ -30,7 +30,7 @@ const ContactManagement = () => {
     if (window.confirm('Are you sure you want to delete this contact?')) {
       try {
         const token = localStorage.getItem('token');
-        await axios.delete(`http://localhost:4000/api/contact/${id}`, {
+        await axios.delete(`https://advanced-event-management.onrender.com/api/contact/${id}`, {
           headers: { Authorization: `Bearer ${token}` }
         });
         // Refresh the contact list after successful deletion

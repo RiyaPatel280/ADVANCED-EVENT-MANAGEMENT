@@ -19,7 +19,7 @@ const AddService = () => {
       const token = localStorage.getItem("token");
       const userEmail = localStorage.getItem("userEmail");
 
-      const response = await axios.get("http://localhost:4000/api/allservices", {
+      const response = await axios.get("https://advanced-event-management.onrender.com/api/allservices", {
         headers: { Authorization: `Bearer ${token}` },
       });
 
@@ -91,7 +91,7 @@ const handleAddService = async () => {
     const token = localStorage.getItem("token");
 
     const response = await axios.post(
-      "http://localhost:4000/api/services",
+      "https://advanced-event-management.onrender.com/api/services",
       newService,
       {
         headers: {
@@ -118,7 +118,7 @@ const handleAddService = async () => {
   // Handle Editing a Service
   const handleEdit = async (id) => {
     try {
-      const response = await axios.get(`http://localhost:4000/api/services/${id}`);
+      const response = await axios.get(`https://advanced-event-management.onrender.com/api/services/${id}`);
       console.log("Service Data:", response.data);
 
       const serviceData = response.data.service;
@@ -154,7 +154,7 @@ const handleUpdateService = async () => {
   try {
     const token = localStorage.getItem("token"); // Assuming token is needed for authorization
     const response = await axios.put(
-      `http://localhost:4000/api/services/${editService._id}`, 
+      `https://advanced-event-management.onrender.com/api/services/${editService._id}`, 
       editService,
       {
         headers: {
@@ -187,7 +187,7 @@ const handleUpdateService = async () => {
     if (!isConfirmed) return;
 
     try {
-      await axios.delete(`http://localhost:4000/api/services/${id}`);
+      await axios.delete(`https://advanced-event-management.onrender.com/api/services/${id}`);
       setServices(services.filter((service) => service._id !== id));
       alert("Service deleted successfully!");
     } catch (error) {

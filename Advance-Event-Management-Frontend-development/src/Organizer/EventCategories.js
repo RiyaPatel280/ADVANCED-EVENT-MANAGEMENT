@@ -32,7 +32,7 @@ const EventCategories = () => {
 
   const fetchCategories = async () => {
     try {
-      const response = await axios.get("http://localhost:4000/api/categories", {
+      const response = await axios.get("https://advanced-event-management.onrender.com/api/categories", {
         headers: { Authorization: `Bearer ${localStorage.getItem("token")}` },
       });
       console.log("Fetched categories:", response.data);
@@ -44,7 +44,7 @@ const EventCategories = () => {
 
   const fetchTitles = async () => {
     try {
-      const response = await axios.get("http://localhost:4000/api/allcategories", {
+      const response = await axios.get("https://advanced-event-management.onrender.com/api/allcategories", {
         headers: { Authorization: `Bearer ${localStorage.getItem("token")}` },
       });
       const uniqueTitles = [...new Set(response.data.map(category => category.title))];
@@ -104,8 +104,8 @@ const EventCategories = () => {
       if (image) formData.append("image", image);
 
       const url = editId
-        ? `http://localhost:4000/api/categories/${editId}`
-        : "http://localhost:4000/api/categories";
+        ? `https://advanced-event-management.onrender.com/api/categories/${editId}`
+        : "https://advanced-event-management.onrender.com/api/categories";
       const method = editId ? "put" : "post";
 
       const response = await axios[method](url, formData, {
@@ -177,7 +177,7 @@ const EventCategories = () => {
     if (!window.confirm(`Are you sure you want to delete this event: "${eventTitle}"?`)) return;
   
     try {
-      await axios.delete(`http://localhost:4000/api/categories/${id}`, {
+      await axios.delete(`https://advanced-event-management.onrender.com/api/categories/${id}`, {
         headers: { Authorization: `Bearer ${localStorage.getItem("token")}` },
       });
   
@@ -187,7 +187,7 @@ const EventCategories = () => {
         setTitles(titles.filter(t => t !== eventTitle));
       }
   
-      await fetch("http://localhost:4000/api/notification/create", {
+      await fetch("https://advanced-event-management.onrender.com/api/notification/create", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
@@ -253,7 +253,7 @@ const EventCategories = () => {
               <div key={category._id} className="col-md-4 mb-4">
                 <div className="card shadow-sm h-100">
                   <div className="card-body">
-                    <img src={`http://localhost:4000/${category.image}`} alt={category.title} className="img-fluid mb-1" />
+                    <img src={`https://advanced-event-management.onrender.com/${category.image}`} alt={category.title} className="img-fluid mb-1" />
                     <h5 className="card-title">{category.title}</h5>
                     <p className="card-text"><strong>Description:</strong> {category.description}</p>
                     <p className="card-text"><strong>Start Date:</strong> {category.startDate ? new Intl.DateTimeFormat("en-GB").format(new Date(category.startDate)) : "N/A"}</p>
@@ -389,7 +389,7 @@ const EventCategories = () => {
               {editId && !image && (
                 <div className="mb-2">
                   <img
-                    src={`http://localhost:4000/${categories.find(cat => cat._id === editId)?.image}`}
+                    src={`https://advanced-event-management.onrender.com/${categories.find(cat => cat._id === editId)?.image}`}
                     alt="Existing Event"
                     className="img-fluid rounded shadow-sm"
                     style={{ maxWidth: "100px", maxHeight: "100px" }}

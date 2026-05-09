@@ -19,7 +19,7 @@ const UserManagement = () => {
 
   const fetchUsers = async () => {
     try {
-      const response = await axios.get("http://localhost:4000/api/users/all-users", {
+      const response = await axios.get("https://advanced-event-management.onrender.com/api/users/all-users", {
         headers: { Authorization: `Bearer ${localStorage.getItem("token")}` },
       });
       setUsers(response.data.users);
@@ -67,7 +67,7 @@ const UserManagement = () => {
     }
     try {
       await axios.put(
-        `http://localhost:4000/api/users/edit-user/${editUser.id}`,
+        `https://advanced-event-management.onrender.com/api/users/edit-user/${editUser.id}`,
         { name: editUser.name, email: editUser.email, phone: editUser.phone, role: editUser.role },
         { headers: { Authorization: `Bearer ${localStorage.getItem("token")}` } }
       );
@@ -85,7 +85,7 @@ const UserManagement = () => {
       return;
     }
     try {
-      await axios.delete(`http://localhost:4000/api/users/delete-user/${id}`, {
+      await axios.delete(`https://advanced-event-management.onrender.com/api/users/delete-user/${id}`, {
         headers: { Authorization: `Bearer ${localStorage.getItem("token")}` },
       });
       fetchUsers();
@@ -121,7 +121,7 @@ const UserManagement = () => {
     }
     try {
       await axios.post(
-        "http://localhost:4000/api/users/signup",
+        "https://advanced-event-management.onrender.com/api/users/signup",
         { 
           name: newUser.name, 
           email: newUser.email, 

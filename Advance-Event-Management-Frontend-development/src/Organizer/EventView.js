@@ -111,7 +111,7 @@ const EventView = () => {
     useEffect(() => {
         const fetchStats = async () => {
             try {
-                const response = await fetch("http://localhost:4000/api/organizer-stats", {
+                const response = await fetch("https://advanced-event-management.onrender.com/api/organizer-stats", {
                     method: "GET",
                     headers: {
                         "Content-Type": "application/json",

@@ -10,7 +10,7 @@ const AdminAllViewEvent = () => {
     const [titleFilter, setTitleFilter] = useState(''); // Filter by event title (dropdown)
 
     useEffect(() => {
-        axios.get('http://localhost:4000/api/allcategories')
+        axios.get('https://advanced-event-management.onrender.com/api/allcategories')
             .then(response => setCategories(response.data))
             .catch(error => console.error("Error fetching categories:", error));
     }, []);
@@ -123,7 +123,7 @@ const AdminAllViewEvent = () => {
                                             <Card className="shadow-sm border-2 h-100">
                                                 <Card.Img
                                                     variant="top"
-                                                    src={`http://localhost:4000/${category.image}`}
+                                                    src={`https://advanced-event-management.onrender.com/${category.image}`}
                                                     style={{ height: '200px', objectFit: 'cover' }}
                                                 />
                                                 <Card.Body>

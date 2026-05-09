@@ -44,7 +44,7 @@ const Allevent = () => {
     const token = localStorage.getItem('token');
 
     axios
-      .get('http://localhost:4000/api/organizers', {
+      .get('https://advanced-event-management.onrender.com/api/organizers', {
         headers: { Authorization: `Bearer ${token}` },
       })
       .then((response) => {
@@ -74,7 +74,7 @@ const Allevent = () => {
       .catch((error) => console.error('Error fetching organizers:', error));
 
     axios
-      .get('http://localhost:4000/api/allcategories')
+      .get('https://advanced-event-management.onrender.com/api/allcategories')
       .then((response) => {
         const uniqueCategories = Array.from(
           new Map(response.data.map((cat) => [cat.title, cat])).values()
@@ -85,7 +85,7 @@ const Allevent = () => {
 
     if (userEmail) {
       axios
-        .get(`http://localhost:4000/api/alluser-registrations?email=${userEmail}`)
+        .get(`https://advanced-event-management.onrender.com/api/alluser-registrations?email=${userEmail}`)
         .then((response) => {
           setRegisteredEvents(new Set(response.data.registeredEvents.map((event) => event.eventId)));
         })
@@ -149,14 +149,14 @@ const Allevent = () => {
     const registrationData = { ...formData, eventId: selectedEventId };
 
     try {
-      const response = await axios.post('http://localhost:4000/api/register', registrationData);
+      const response = await axios.post('https://advanced-event-management.onrender.com/api/register', registrationData);
       alert(response.data.message);
       setShowModal(false);
       setFormData({ name: '', email: '', phone: '', eventName: '', organizer: '', venue: '', city: '' });
       setRegisteredEvents((prev) => new Set([...Array.from(prev), selectedEventId]));
 
       // Fetch updated notifications and update Header immediately
-      const notificationResponse = await axios.get(`http://localhost:4000/api/notification?email=${registrationData.email}`);
+      const notificationResponse = await axios.get(`https://advanced-event-management.onrender.com/api/notification?email=${registrationData.email}`);
       const updatedNotifications = notificationResponse.data.notifications || [];
       if (notificationUpdater) {
         notificationUpdater(updatedNotifications);
@@ -433,7 +433,7 @@ const Allevent = () => {
                       <div className="rangoli-weave">
                         <Card.Img
                           variant="top"
-                          src={`http://localhost:4000/${category.image}`}
+                          src={`https://advanced-event-management.onrender.com/${category.image}`}
                           className="sankalp-drishti"
                         />
                       </div>

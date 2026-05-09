@@ -33,7 +33,7 @@ const Addeventbyadmin = () => {
 
   const fetchCategories = async () => {
     try {
-      const response = await axios.get("http://localhost:4000/api/allcategories", {
+      const response = await axios.get("https://advanced-event-management.onrender.com/api/allcategories", {
         headers: { Authorization: `Bearer ${localStorage.getItem("token")}` },
       });
       setCategories(response.data);
@@ -44,7 +44,7 @@ const Addeventbyadmin = () => {
 
   const fetchTitles = async () => {
     try {
-      const response = await axios.get("http://localhost:4000/api/allcategories", {
+      const response = await axios.get("https://advanced-event-management.onrender.com/api/allcategories", {
         headers: { Authorization: `Bearer ${localStorage.getItem("token")}` },
       });
       const uniqueTitles = [...new Set(response.data.map(category => category.title))];
@@ -81,7 +81,7 @@ const Addeventbyadmin = () => {
       formData.append("customFields", JSON.stringify(customFields));
       if (image) formData.append("image", image);
 
-      const url = editId ? `http://localhost:4000/api/categories/${editId}` : "http://localhost:4000/api/categories";
+      const url = editId ? `https://advanced-event-management.onrender.com/api/categories/${editId}` : "https://advanced-event-management.onrender.com/api/categories";
       const method = editId ? "put" : "post";
 
       const response = await axios[method](url, formData, {
@@ -144,7 +144,7 @@ const Addeventbyadmin = () => {
   const handleDeleteCategory = async (id) => {
     if (window.confirm("Are you sure you want to delete this category?")) {
       try {
-        await axios.delete(`http://localhost:4000/api/categories/${id}`, {
+        await axios.delete(`https://advanced-event-management.onrender.com/api/categories/${id}`, {
           headers: { Authorization: `Bearer ${localStorage.getItem("token")}` },
         });
         setCategories(categories.filter((cat) => cat._id !== id));
@@ -261,7 +261,7 @@ const Addeventbyadmin = () => {
                     <Card className="h-100 shadow-sm">
                       <Card.Img
                         variant="top"
-                        src={`http://localhost:4000/${category.image}`}
+                        src={`https://advanced-event-management.onrender.com/${category.image}`}
                         alt={category.title}
                         className="img-fluid"
                         style={{ height: '200px', objectFit: 'cover' }}
@@ -395,7 +395,7 @@ const Addeventbyadmin = () => {
                 {editId && !image && (
                   <div className="mb-2">
                     <img
-                      src={`http://localhost:4000/${categories.find(cat => cat._id === editId)?.image}`}
+                      src={`https://advanced-event-management.onrender.com/${categories.find(cat => cat._id === editId)?.image}`}
                       alt="Existing Event"
                       className="img-fluid rounded shadow-sm"
                       style={{ maxWidth: "100px", maxHeight: "100px" }}

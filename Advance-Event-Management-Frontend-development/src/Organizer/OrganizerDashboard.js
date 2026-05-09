@@ -37,7 +37,7 @@ const OrganizerDashboard = () => {
   const fetchEvents = async () => {
     try {
       const token = localStorage.getItem('token');
-      const response = await fetch('http://localhost:4000/api/events', {
+      const response = await fetch('https://advanced-event-management.onrender.com/api/events', {
         headers: { Authorization: `Bearer ${token}` },
       });
       const data = await response.json();
@@ -52,7 +52,7 @@ const OrganizerDashboard = () => {
   const fetchFeedbackData = async () => {
     try {
       const token = localStorage.getItem('token');
-      const response = await fetch('http://localhost:4000/api/feedback/event/all', {
+      const response = await fetch('https://advanced-event-management.onrender.com/api/feedback/event/all', {
         headers: { Authorization: `Bearer ${token}` },
       });
       const data = await response.json();

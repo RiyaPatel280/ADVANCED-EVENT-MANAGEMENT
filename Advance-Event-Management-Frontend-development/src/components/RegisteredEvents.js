@@ -25,7 +25,7 @@ const RegisteredEvents = () => {
     try {
       const token = localStorage.getItem("token");
       const response = await fetch(
-        `http://localhost:4000/api/user-registrations?email=${email}`,
+        `https://advanced-event-management.onrender.com/api/user-registrations?email=${email}`,
         {
           headers: { Authorization: `Bearer ${token}` },
         }
@@ -55,7 +55,7 @@ const RegisteredEvents = () => {
     try {
       const token = localStorage.getItem("token");
       const response = await fetch(
-        "http://localhost:4000/api/cancel-registration",
+        "https://advanced-event-management.onrender.com/api/cancel-registration",
         {
           method: "DELETE",
           headers: {
@@ -69,7 +69,7 @@ const RegisteredEvents = () => {
       if (data.success) {
         setEvents((prev) => prev.filter((event) => event.eventId?._id !== eventId));
         window.alert("Spot successfully released.");
-        await fetch("http://localhost:4000/api/notification/create", {
+        await fetch("https://advanced-event-management.onrender.com/api/notification/create", {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({

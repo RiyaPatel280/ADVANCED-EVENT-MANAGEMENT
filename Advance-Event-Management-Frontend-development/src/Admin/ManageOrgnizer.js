@@ -21,7 +21,7 @@ const ManageOrganizer = () => {
   const fetchUsers = async () => {
     const token = localStorage.getItem("token");
     try {
-      const response = await axios.get("http://localhost:4000/api/users/all-users", {
+      const response = await axios.get("https://advanced-event-management.onrender.com/api/users/all-users", {
         headers: { Authorization: `Bearer ${token}` },
       });
       const filteredUsers = (response.data.users || []).filter(
@@ -59,7 +59,7 @@ const ManageOrganizer = () => {
     const token = localStorage.getItem("token");
     try {
       const response = await axios.put(
-        `http://localhost:4000/api/users/edit-user/${editingUser._id}`,
+        `https://advanced-event-management.onrender.com/api/users/edit-user/${editingUser._id}`,
         { name: editedName, email: editedEmail, phone: editedPhone, role: editedRole },
         { headers: { Authorization: `Bearer ${token}` } }
       );
@@ -79,7 +79,7 @@ const ManageOrganizer = () => {
     if (!window.confirm("Are you sure you want to delete this user?")) return;
     try {
       const response = await axios.delete(
-        `http://localhost:4000/api/users/delete-user/${userId}`,
+        `https://advanced-event-management.onrender.com/api/users/delete-user/${userId}`,
         { headers: { Authorization: `Bearer ${token}` } }
       );
       alert("Organizer deleted successfully"); // Updated alert message
@@ -109,7 +109,7 @@ const ManageOrganizer = () => {
     const token = localStorage.getItem("token");
     try {
       const response = await axios.post(
-        "http://localhost:4000/api/users/signup",
+        "https://advanced-event-management.onrender.com/api/users/signup",
         {
           name: newName,
           email: newEmail,

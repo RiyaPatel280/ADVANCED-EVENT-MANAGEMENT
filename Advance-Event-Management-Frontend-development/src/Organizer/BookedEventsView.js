@@ -31,7 +31,7 @@ const BookedEventsView = () => {
   const fetchBookedEvents = async () => {
     setIsLoading(true);
     try {
-      const response = await fetch("http://localhost:4000/api/booked-eventsOA", {
+      const response = await fetch("https://advanced-event-management.onrender.com/api/booked-eventsOA", {
         method: "GET",
         headers: {
           "Content-Type": "application/json",

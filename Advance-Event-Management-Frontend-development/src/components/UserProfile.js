@@ -31,7 +31,7 @@ const UserProfile = () => {
         navigate("/login");
         return;
       }
-      const response = await fetch("http://localhost:4000/api/users/user-profile", {
+      const response = await fetch("https://advanced-event-management.onrender.com/api/users/user-profile", {
         method: "GET",
         headers: {
           "Content-Type": "application/json",
@@ -70,7 +70,7 @@ const UserProfile = () => {
 
     try {
       const token = localStorage.getItem("token");
-      const response = await fetch(`http://localhost:4000/api/users/edit-user/${userId}`, {
+      const response = await fetch(`https://advanced-event-management.onrender.com/api/users/edit-user/${userId}`, {
         method: "PUT",
         headers: {
           "Content-Type": "application/json",

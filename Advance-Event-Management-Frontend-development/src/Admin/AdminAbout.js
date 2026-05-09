@@ -16,7 +16,7 @@ const AdminAbout = () => {
   useEffect(() => {
     const fetchAboutData = async () => {
       try {
-        const response = await axios.get('http://localhost:4000/api/about');
+        const response = await axios.get('https://advanced-event-management.onrender.com/api/about');
         setFormData(response.data);
       } catch (err) {
         console.error('Error fetching about data:', err);
@@ -57,7 +57,7 @@ const AdminAbout = () => {
 
     try {
       const token = localStorage.getItem('token');
-      const response = await axios.put('http://localhost:4000/api/update', formData, {
+      const response = await axios.put('https://advanced-event-management.onrender.com/api/update', formData, {
         headers: { Authorization: `Bearer ${token}` }
       });
       // Show popup alert on successful update

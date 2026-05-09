@@ -25,7 +25,7 @@ const VenueSelection = () => {
   useEffect(() => {
     const fetchVenues = async () => {
       try {
-        const response = await axios.get("http://localhost:4000/api/venues", {
+        const response = await axios.get("https://advanced-event-management.onrender.com/api/venues", {
           params: { addBy: selectedOrganizer },
         });
         setVenues(response.data);
@@ -42,7 +42,7 @@ const VenueSelection = () => {
       if (token && formData.eventDate) {
         try {
           const response = await axios.get(
-            `http://localhost:4000/api/user-birthday-payment-details?eventDate=${formData.eventDate}`,
+            `https://advanced-event-management.onrender.com/api/user-birthday-payment-details?eventDate=${formData.eventDate}`,
             { headers: { Authorization: `Bearer ${token}` } }
           );
           setPaymentHistory(response.data.payments || []); // Expect an array of payments
@@ -105,7 +105,7 @@ const VenueSelection = () => {
         alert(`Payment Successful! Transaction ID: ${response.razorpay_payment_id}`);
         try {
           const saveResponse = await axios.post(
-            "http://localhost:4000/api/save-birthday-payment",
+            "https://advanced-event-management.onrender.com/api/save-birthday-payment",
             {
               razorpayPaymentId: response.razorpay_payment_id,
               eventDate: formData.eventDate,
@@ -120,7 +120,7 @@ const VenueSelection = () => {
           );
           // Fetch updated payment history after successful payment
           const paymentDetailsResponse = await axios.get(
-            `http://localhost:4000/api/user-birthday-payment-details?eventDate=${formData.eventDate}`,
+            `https://advanced-event-management.onrender.com/api/user-birthday-payment-details?eventDate=${formData.eventDate}`,
             { headers: { Authorization: `Bearer ${token}` } }
           );
           setPaymentHistory(paymentDetailsResponse.data.payments || []);

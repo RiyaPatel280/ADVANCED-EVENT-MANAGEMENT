@@ -14,7 +14,7 @@ const UserView = () => {
   const fetchRegistrations = async () => {
     setIsLoading(true);
     try {
-      const response = await fetch("http://localhost:4000/api/registrations", {
+      const response = await fetch("https://advanced-event-management.onrender.com/api/registrations", {
         method: "GET",
         headers: {
           "Content-Type": "application/json",
